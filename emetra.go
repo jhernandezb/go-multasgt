@@ -10,6 +10,13 @@ import (
 	"github.com/PuerkitoBio/goquery"
 )
 
+// Ensure interface implementation.
+var _ TicketChecker = &Emetra{}
+
+const (
+	emetraURL = "http://consulta.muniguate.com/emetra/despliega.php"
+)
+
 // Emetra implementation.
 type Emetra struct {
 }
@@ -32,7 +39,9 @@ func processEmetraTicket(wg *sync.WaitGroup, tickets []Ticket, idx int, sel *goq
 	ammount := info.Get(2).FirstChild.Data
 	parsedPhotoURL := fmt.Sprintf(photoURL, rURL.Query().Get("r"))
 	var photo string
-	tickets[idx] = Ticket{Date: date,
+	tickets[idx] = Ticket{
+		Entity:   "EMETRA",
+		Date:     date,
 		Ammount:  ammount,
 		Photo:    photo,
 		Location: loc,
@@ -45,7 +54,7 @@ func processEmetraTicket(wg *sync.WaitGroup, tickets []Ticket, idx int, sel *goq
 	tickets[idx].Info = cleanStrings(strings.Replace(m, "MOTIVO DE REMISION:", "", -1))
 	regex := `[src#=(^http:\/\/consultas.muniguate.com\/consultas\/fotos)]`
 	// URL comes with an extra \n.
-	tickets[idx].Photo = strings.Replace(getAttribute("src", photoDoc.Find(regex).Get(0)), "\n", "", -1)
+	tickets[idx].Photo = cleanStrings(getAttribute("src", photoDoc.Find(regex).Get(0)))
 
 }
 

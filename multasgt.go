@@ -7,12 +7,9 @@ import (
 	"golang.org/x/net/html"
 )
 
-const (
-	emetraURL = "http://consulta.muniguate.com/emetra/despliega.php"
-)
-
 // Ticket represents the information related to the ticket.
 type Ticket struct {
+	Entity   string
 	Date     string
 	Ammount  string
 	Location string
