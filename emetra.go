@@ -19,9 +19,10 @@ const (
 
 // Emetra implementation.
 type Emetra struct {
+	Client *http.Client
 }
 
-func processEmetraTicket(wg *sync.WaitGroup, tickets []Ticket, idx int, sel *goquery.Selection) {
+func (e *Emetra) processEmetraTicket(wg *sync.WaitGroup, tickets []Ticket, idx int, sel *goquery.Selection) {
 	defer wg.Done()
 	info := sel.Find(".texto")
 	if len(info.Nodes) < 3 {
@@ -46,10 +47,13 @@ func processEmetraTicket(wg *sync.WaitGroup, tickets []Ticket, idx int, sel *goq
 		Photo:    photo,
 		Location: loc,
 	}
+
+	res, err := e.Client.Get(parsedPhotoURL)
 	if err != nil {
 		return
 	}
-	photoDoc, err := goquery.NewDocument(parsedPhotoURL)
+
+	photoDoc, err := goquery.NewDocumentFromResponse(res)
 	m := photoDoc.Find(`strong:contains("MOTIVO DE REMISION:")`).Parent().Text()
 	tickets[idx].Info = cleanStrings(strings.Replace(m, "MOTIVO DE REMISION:", "", -1))
 	regex := `[src#=(^http:\/\/consultas.muniguate.com\/consultas\/fotos)]`
@@ -59,8 +63,8 @@ func processEmetraTicket(wg *sync.WaitGroup, tickets []Ticket, idx int, sel *goq
 }
 
 // Check retrieves all tickes and aditional information.
-func (e Emetra) Check(plateType, plateNumber string) ([]Ticket, error) {
-	resp, err := http.PostForm(emetraURL, url.Values{
+func (e *Emetra) Check(plateType, plateNumber string) ([]Ticket, error) {
+	resp, err := e.Client.PostForm(emetraURL, url.Values{
 		"tplaca": {plateType},
 		"nplaca": {plateNumber},
 	})
@@ -76,7 +80,7 @@ func (e Emetra) Check(plateType, plateNumber string) ([]Ticket, error) {
 	tickets := make([]Ticket, len(rows.Nodes))
 	rows.Each(func(idx int, sel *goquery.Selection) {
 		wg.Add(1)
-		processEmetraTicket(&wg, tickets, idx, sel)
+		e.processEmetraTicket(&wg, tickets, idx, sel)
 	})
 	wg.Wait()
 	return tickets, nil

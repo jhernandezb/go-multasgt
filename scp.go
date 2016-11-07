@@ -16,11 +16,12 @@ const (
 
 // SCP implementation.
 type SCP struct {
+	Client *http.Client
 }
 
 // Check retrieves all tickes and aditional information.
-func (e SCP) Check(plateType, plateNumber string) ([]Ticket, error) {
-	resp, err := http.PostForm(scpURL, url.Values{
+func (s SCP) Check(plateType, plateNumber string) ([]Ticket, error) {
+	resp, err := s.Client.PostForm(scpURL, url.Values{
 		"cbTipoPlaca":          {plateType},
 		"txtNumeroPlaca":       {plateNumber},
 		"btnObtener":           {"Consultar"},

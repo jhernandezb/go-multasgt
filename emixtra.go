@@ -20,11 +20,12 @@ const (
 
 // Emixtra implementation.
 type Emixtra struct {
+	Client *http.Client
 }
 
 // Check retrieves all tickes and aditional information.
-func (e Emixtra) Check(plateType, plateNumber string) ([]Ticket, error) {
-	resp, err := http.PostForm(emixtraURL, url.Values{
+func (e *Emixtra) Check(plateType, plateNumber string) ([]Ticket, error) {
+	resp, err := e.Client.PostForm(emixtraURL, url.Values{
 		"tPlaca": {plateType},
 		"placa":  {plateNumber},
 		"estado": {"0"},
