@@ -20,7 +20,7 @@ type SCP struct {
 }
 
 // Check retrieves all tickes and aditional information.
-func (s SCP) Check(plateType, plateNumber string) ([]Ticket, error) {
+func (s *SCP) Check(plateType, plateNumber string) ([]Ticket, error) {
 	resp, err := s.Client.PostForm(scpURL, url.Values{
 		"cbTipoPlaca":          {plateType},
 		"txtNumeroPlaca":       {plateNumber},
