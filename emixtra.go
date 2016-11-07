@@ -2,10 +2,8 @@ package multasgt
 
 import (
 	"fmt"
-	"io/ioutil"
 	"net/http"
 	"net/url"
-	"strings"
 
 	"github.com/PuerkitoBio/goquery"
 )
@@ -15,7 +13,8 @@ var _ TicketChecker = &Emixtra{}
 
 const (
 	emixtraURL      = "http://consultas.munimixco.gob.gt/vista/emixtra.php"
-	emixtraPhotoURL = "http://consultas.munimixco.gob.gt/vista/views/foto.php?rem=%v&T=%v&P=%v&s=F"
+	emixtraPhotoURL = "http://consultas.munimixco.gob.gt/vista/views/foto.php?rem=%v&T=%v&P=%v&s=%v"
+	exmitraEntity   = "EMIXTRA"
 )
 
 // Emixtra implementation.
@@ -34,55 +33,52 @@ func (e *Emixtra) Check(plateType, plateNumber string) ([]Ticket, error) {
 	if err != nil {
 		return nil, err
 	}
-
-	b, _ := ioutil.ReadAll(resp.Body)
-	// Nasty hack since malformed html with unclosed `b` tags generates a deep tree.
-	s := strings.Replace(strings.Replace(string(b), "<b>", "", -1), "</b>", "", -1)
-	doc, err := goquery.NewDocumentFromReader(strings.NewReader(s))
-	status := 0
-	ticket := Ticket{}
 	var tickets []Ticket
-	doc.Find("#foo").Children().Each(func(idx int, sel *goquery.Selection) {
-		if sel.Is("hr") {
-			status = 0
+	doc, err := goquery.NewDocumentFromResponse(resp)
+	rows := doc.Find(".panel-body .col-xs-12 > .panel > .panel-body > .row")
+	currentIndex := 0
+	var ticket Ticket
+	rows.Each(func(idx int, sel *goquery.Selection) {
+		if idx == 0 {
 			return
 		}
-		if !sel.Is("div") {
-			return
-		}
-
-		switch status {
-		case 0:
-			ticket.Entity = "EMIXTRA"
-			ticket.Location = cleanStrings(sel.Children().Last().Text())
+		currentIndex++
+		switch currentIndex {
 		case 1:
-			ticket.Date = cleanStrings(sel.Children().Last().Text())
-		case 3:
-			var pID string
-			sel.Find("h6").EachWithBreak(func(i int, s *goquery.Selection) bool {
+			if idx+1 == rows.Length() {
+				return
+			}
+			ticket = Ticket{Entity: exmitraEntity}
+
+			sel.Find(".col-xs-2").Each(func(i int, s *goquery.Selection) {
 				switch i {
 				case 0:
-					pID = cleanStrings(s.Text())
-					ticket.Photo = fmt.Sprintf(emixtraPhotoURL, pID, plateType, plateNumber)
+					ticket.ID = cleanStrings(s.Text())
 				case 1:
+					ticket.Date = cleanStrings(s.Text())
+				case 2:
+					ticket.Location = cleanStrings(s.Text())
+				case 3:
 					ticket.Ammount = cleanStrings(s.Text())
-					return false
+				case 4:
+					ticket.Discount = cleanStrings(s.Text())
+				case 5:
+					ticket.Total = cleanStrings(s.Text())
 				}
-				return true
 			})
-		case 5:
-			sel.Find("h6").EachWithBreak(func(i int, s *goquery.Selection) bool {
-				switch i {
-				case 0:
-					ticket.Info = cleanStrings(s.Text())
-					return false
-				}
-				return true
-			})
+		case 2:
+			form := sel.Find("form")
+			formS := form.Find(`[name="s"]`).AttrOr("value", "F")
+			formRem := form.Find(`[name="rem"]`).AttrOr("value", "")
+			formT := form.Find(`[name="T"]`).AttrOr("value", "P")
+			formP := form.Find(`[name="P"]`).AttrOr("value", "")
+			ticket.Photo = fmt.Sprintf(emixtraPhotoURL, formRem, formT, formP, formS)
+		case 3:
+			ticket.Info = cleanStrings(sel.Find(".col-xs-7 .row:nth-child(2) > .col-xs-6").Text())
+		case 4:
 			tickets = append(tickets, ticket)
-			ticket = Ticket{}
+			currentIndex = 0
 		}
-		status++
 	})
 	return tickets, nil
 }

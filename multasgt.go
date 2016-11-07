@@ -9,9 +9,12 @@ import (
 
 // Ticket represents the information related to the ticket.
 type Ticket struct {
+	ID       string
 	Entity   string
 	Date     string
 	Ammount  string
+	Discount string
+	Total    string
 	Location string
 	Info     string
 	Photo    string
