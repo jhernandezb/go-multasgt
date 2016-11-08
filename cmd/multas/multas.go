@@ -14,7 +14,7 @@ import (
 
 func main() {
 	client := &http.Client{
-		Timeout: time.Duration(5 * time.Second),
+		Timeout: time.Duration(15 * time.Second),
 	}
 	var pType = flag.String("type", "P", "Plate Type")
 	var pNumber = flag.String("number", "123ABC", "Plate Number")
