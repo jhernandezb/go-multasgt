@@ -20,7 +20,7 @@ func main() {
 	var pNumber = flag.String("number", "123ABC", "Plate Number")
 	flag.Parse()
 	var wg sync.WaitGroup
-	wg.Add(3)
+	wg.Add(7)
 	go func() {
 		defer wg.Done()
 		var tickets []multasgt.Ticket
@@ -53,6 +53,50 @@ func main() {
 			fmt.Printf("%#v \n", r)
 		}
 	}()
+
+	go func() {
+		defer wg.Done()
+		var tickets []multasgt.Ticket
+		f := &multasgt.Fraijanes{}
+		f.Client = client
+		tickets, _ = f.Check(*pType, *pNumber)
+		for _, r := range tickets {
+			fmt.Printf("%#v \n", r)
+		}
+	}()
+
+	go func() {
+		defer wg.Done()
+		var tickets []multasgt.Ticket
+		v := &multasgt.VillaNueva{}
+		v.Client = client
+		tickets, _ = v.Check(*pType, *pNumber)
+		for _, r := range tickets {
+			fmt.Printf("%#v \n", r)
+		}
+	}()
+	go func() {
+		defer wg.Done()
+		var tickets []multasgt.Ticket
+		p := &multasgt.PNC{}
+		p.Client = client
+		tickets, _ = p.Check(*pType, *pNumber)
+		for _, r := range tickets {
+			fmt.Printf("%#v \n", r)
+		}
+	}()
+
+	go func() {
+		defer wg.Done()
+		var tickets []multasgt.Ticket
+		a := &multasgt.Antigua{}
+		a.Client = client
+		tickets, _ = a.Check(*pType, *pNumber)
+		for _, r := range tickets {
+			fmt.Printf("%#v \n", r)
+		}
+	}()
+
 	wg.Wait()
 
 }
