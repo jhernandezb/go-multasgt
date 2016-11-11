@@ -11,7 +11,7 @@
 - Antigua Guatemala
 
 ## LICENSE 
-- [Goquery][goquery]
+- [Go Query][goquery]
 - [Cascadia][cascadia]
 
 [goquery] : https://github.com/PuerkitoBio/goquery/blob/master/LICENSE
