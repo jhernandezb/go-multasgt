@@ -9,15 +9,15 @@ import (
 
 // Ticket represents the information related to the ticket.
 type Ticket struct {
-	ID       string
-	Entity   string
-	Date     string
-	Ammount  string
-	Discount string
-	Total    string
-	Location string
-	Info     string
-	Photo    string
+	ID       string `json:"id"`
+	Entity   string `json:"entity"`
+	Date     string `json:"date"`
+	Ammount  string `json:"ammount"`
+	Discount string `json:"discount"`
+	Total    string `json:"total"`
+	Location string `json:"location"`
+	Info     string `json:"info"`
+	Photo    string `json:"photo"`
 }
 
 // TicketChecker is the interface that all checkers must implement.
