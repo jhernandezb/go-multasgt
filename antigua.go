@@ -33,7 +33,8 @@ func (a *Antigua) Check(plateType, plateNumber string) ([]Ticket, error) {
 
 	doc, err := goquery.NewDocumentFromResponse(resp)
 	var tickets []Ticket
-	doc.Find(`.main table tbody tr`).Each(func(idx int, sel *goquery.Selection) {
+
+	doc.Find(`.main table:last-child tbody tr`).Each(func(idx int, sel *goquery.Selection) {
 		if idx == 0 {
 			return
 		}
@@ -51,9 +52,9 @@ func (a *Antigua) Check(plateType, plateNumber string) ([]Ticket, error) {
 				ticket.Location = cleanStrings(cSel.Text())
 			case 3:
 				ticket.Info = cleanStrings(cSel.Text())
-			case 4:
+			case 5:
 				ticket.Ammount = cleanStrings(cSel.Text())
-			case 6:
+			case 7:
 				ticket.Total = cleanStrings(cSel.Text())
 				tickets = append(tickets, ticket)
 			}
