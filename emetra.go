@@ -38,10 +38,12 @@ func (e *Emetra) processEmetraTicket(wg *sync.WaitGroup, tickets []Ticket, idx i
 	date := info.Get(0).FirstChild.Data
 	loc := info.Get(1).FirstChild.Data
 	ammount := info.Get(2).FirstChild.Data
-	parsedPhotoURL := fmt.Sprintf(photoURL, rURL.Query().Get("r"))
+	id := rURL.Query().Get("r")
+	parsedPhotoURL := fmt.Sprintf(photoURL, id)
 	var photo string
 	tickets[idx] = Ticket{
 		Entity:   "EMETRA",
+		ID:       id,
 		Date:     date,
 		Ammount:  ammount,
 		Photo:    photo,
