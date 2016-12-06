@@ -77,7 +77,9 @@ func (e *Emetra) Check(plateType, plateNumber string) ([]Ticket, error) {
 	doc, err := goquery.NewDocumentFromResponse(resp)
 
 	var wg sync.WaitGroup
-
+	if err != nil {
+		return nil, err
+	}
 	rows := doc.Find("tr.row")
 	tickets := make([]Ticket, len(rows.Nodes))
 	rows.Each(func(idx int, sel *goquery.Selection) {
