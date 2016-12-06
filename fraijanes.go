@@ -35,6 +35,9 @@ func (f *Fraijanes) Check(plateType, plateNumber string) ([]Ticket, error) {
 	}
 	var tickets []Ticket
 	doc, err := goquery.NewDocumentFromResponse(resp)
+	if err != nil {
+		return nil, err
+	}
 	rows := doc.Find("table tbody tr")
 	rl := rows.Length()
 	rows.EachWithBreak(func(idx int, s *goquery.Selection) bool {

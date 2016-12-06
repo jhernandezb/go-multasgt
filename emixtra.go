@@ -35,6 +35,9 @@ func (e *Emixtra) Check(plateType, plateNumber string) ([]Ticket, error) {
 	}
 	var tickets []Ticket
 	doc, err := goquery.NewDocumentFromResponse(resp)
+	if err != nil {
+		return nil, err
+	}
 	rows := doc.Find(".panel-body .col-xs-12 > .panel > .panel-body > .row")
 	currentIndex := 0
 	var ticket Ticket

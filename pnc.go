@@ -50,6 +50,9 @@ func (p *PNC) Check(plateType, plateNumber string) ([]Ticket, error) {
 
 	var tickets []Ticket
 	doc, err := goquery.NewDocumentFromResponse(resp)
+	if err != nil {
+		return nil, err
+	}
 	rows := doc.Find("table tbody tr.rgRow")
 
 	rows.Each(func(idx int, sel *goquery.Selection) {

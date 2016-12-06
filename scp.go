@@ -34,7 +34,9 @@ func (s *SCP) Check(plateType, plateNumber string) ([]Ticket, error) {
 	}
 
 	doc, err := goquery.NewDocumentFromResponse(resp)
-
+	if err != nil {
+		return nil, err
+	}
 	var tickets []Ticket
 	doc.Find(`#pMultas table tbody tr`).Each(func(idx int, sel *goquery.Selection) {
 		if idx%2 == 0 {

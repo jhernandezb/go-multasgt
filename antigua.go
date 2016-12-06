@@ -32,6 +32,9 @@ func (a *Antigua) Check(plateType, plateNumber string) ([]Ticket, error) {
 	}
 
 	doc, err := goquery.NewDocumentFromResponse(resp)
+	if err != nil {
+		return nil, err
+	}
 	var tickets []Ticket
 
 	doc.Find(`.main table:last-child tbody tr`).Each(func(idx int, sel *goquery.Selection) {
