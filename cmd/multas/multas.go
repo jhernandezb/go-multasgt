@@ -9,44 +9,9 @@ import (
 
 	"time"
 
-	"github.com/aws/aws-sdk-go/aws"
-	"github.com/aws/aws-sdk-go/aws/session"
-	"github.com/aws/aws-sdk-go/service/s3/s3manager"
 	"github.com/jhernandezme/go-multasgt"
 )
 
-func downloadImage(url string) error {
-	resp, err := http.Get(url)
-	defer resp.Body.Close()
-	if err != nil {
-		return err
-	}
-
-	// Session configuration
-	sess, err := session.NewSessionWithOptions(session.Options{
-		Config:  aws.Config{Region: aws.String("us-east-1")},
-		Profile: "jhernandez",
-	})
-	if err != nil {
-		return err
-	}
-	svc := s3manager.NewUploader(sess)
-
-	result, err := svc.Upload(&s3manager.UploadInput{
-		Bucket: aws.String("img.el-infractor.jhernandez.me"),
-		//The location inside the bucket
-		Key:         aws.String("images/test.jpg"),
-		ContentType: aws.String(resp.Header.Get("Content-Type")),
-		Body:        resp.Body,
-	})
-	if err != nil {
-		fmt.Println("error to upload file: ", err)
-		return err
-	}
-	fmt.Printf("Successfully uploaded %s to \n", result.Location)
-	fmt.Println(result)
-	return nil
-}
 func main() {
 	client := &http.Client{
 		Timeout: time.Duration(15 * time.Second),
@@ -56,11 +21,6 @@ func main() {
 	flag.Parse()
 	var wg sync.WaitGroup
 	var mutex sync.Mutex
-	// err := downloadImage("http://consultas.muniguate.com/consultas/fotos/Periferico_Sur_19_calle_Z11/27-05-2016-07-09-29-0.jpg")
-	// fmt.Println(err)
-	// if err != nil {
-	// 	return
-	// }
 	wg.Add(7)
 	var ts []multasgt.Ticket
 	go func() {
