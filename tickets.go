@@ -1,7 +1,6 @@
 package multasgt
 
 import (
-	"fmt"
 	"net/http"
 	"sync"
 )
@@ -16,7 +15,6 @@ func getTickets(wg *sync.WaitGroup,
 	plateType, plateNumber string,
 	tckts *Tickets,
 	checker TicketChecker) {
-	fmt.Println("Getting tickets")
 	defer wg.Done()
 	var tickets []Ticket
 	tickets, _ = checker.Check(plateType, plateNumber)
@@ -25,6 +23,7 @@ func getTickets(wg *sync.WaitGroup,
 	tckts.M.Unlock()
 }
 
+// GetAllTickets retrieves tickets from all entities.
 func GetAllTickets(plateType, plateNumber string, c *http.Client) ([]Ticket, error) {
 	var wg sync.WaitGroup
 	wg.Add(7)
