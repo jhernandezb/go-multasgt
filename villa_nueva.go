@@ -82,5 +82,6 @@ func (f *VillaNueva) Check(plateType, plateNumber string) ([]Ticket, error) {
 		tickets = append(tickets, ticket)
 		return true
 	})
+	// TODO: Visit http://www.villanueva.gob.gt/consultas/foto.php?serie=T&boleta=%s&tipo=%s&numero=%s for each ticket in order to generate images.
 	return tickets, nil
 }
