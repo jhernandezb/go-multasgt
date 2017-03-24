@@ -80,6 +80,7 @@ func (e *Emixtra) Check(plateType, plateNumber string) ([]Ticket, error) {
 			ticket.Info = cleanStrings(sel.Find(".col-xs-7 .row:nth-child(2) > .col-xs-6").Text())
 		case 4:
 			tickets = append(tickets, ticket)
+		case 5:
 			currentIndex = 0
 		}
 	})
