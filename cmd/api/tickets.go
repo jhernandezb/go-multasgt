@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/jhernandezme/go-multasgt"
+	"github.com/jhernandezb/go-multasgt"
 )
 
 func getTickets() []multasgt.Ticket {

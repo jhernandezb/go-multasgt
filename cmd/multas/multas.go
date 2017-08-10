@@ -8,7 +8,7 @@ import (
 
 	"time"
 
-	"github.com/jhernandezme/go-multasgt"
+	"github.com/jhernandezb/go-multasgt"
 )
 
 func main() {
