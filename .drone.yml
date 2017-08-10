@@ -1,3 +1,7 @@
+workspace:
+  base: /go
+  path: src/github.com/jhernandezb/go-multasgt
+
 pipeline:
   test:
     image: instrumentisto/glide
