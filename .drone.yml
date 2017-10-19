@@ -4,6 +4,6 @@ workspace:
 
 pipeline:
   test:
-    image: instrumentisto/glide
+    image: golang:1.9
     commands:
-      - glide install
+      - github.com/jhernandezb/go-multasgt
