@@ -6,4 +6,4 @@ pipeline:
   test:
     image: golang:1.9
     commands:
-      - github.com/jhernandezb/go-multasgt
+      - go test github.com/jhernandezb/go-multasgt
