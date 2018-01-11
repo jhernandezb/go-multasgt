@@ -1,8 +1,10 @@
-hash: 4b83590ce630cedb7c052dbde184feb0b0302098f24418baf1b51c7c56453fee
-updated: 2017-10-19T11:40:23.623768433-06:00
+hash: 493132003d7a895f6676e3540b2e0325dea1b57054dec0fc2e03cb37f00b5a06
+updated: 2018-01-10T22:29:13.088678-06:00
 imports:
 - name: github.com/andybalholm/cascadia
   version: 349dd0209470eabd9514242c688c403c0926d266
+- name: github.com/h2non/gock
+  version: 26775f23aa9da4cbd47bc2600a57ac07bbf3bd20
 - name: github.com/PuerkitoBio/goquery
   version: e1271ee34c6a305e38566ecd27ae374944907ee9
 - name: golang.org/x/net
