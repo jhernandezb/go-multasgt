@@ -40,6 +40,7 @@ func Fetch(plateType, plateNumber string, cli *http.Client) (*goquery.Document, 
 // Parse parses the retrieved document and returns and array of tickets.
 func Parse(doc *goquery.Document) ([]multasgt.Ticket, error) {
 	rows := doc.Find(".row > .col-md-8.col-xs-10> .panel.panel-primary")
+	var tickets []multasgt.Ticket
 	var ticket multasgt.Ticket
 	rows.Each(func(idx int, sel *goquery.Selection) {
 		// Ommit header info
