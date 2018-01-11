@@ -60,15 +60,15 @@ func (p *PNC) Check(plateType, plateNumber string) ([]Ticket, error) {
 		sel.Children().Each(func(i int, s *goquery.Selection) {
 			switch i {
 			case 1:
-				ticket.Date = cleanStrings(s.Text())
+				ticket.Date = CleanStrings(s.Text())
 			case 2:
-				ticket.ID = cleanStrings(s.Text())
+				ticket.ID = CleanStrings(s.Text())
 			case 3:
-				ticket.ID = fmt.Sprintf("%s%s", ticket.ID, cleanStrings(s.Text()))
+				ticket.ID = fmt.Sprintf("%s%s", ticket.ID, CleanStrings(s.Text()))
 			case 5:
-				ticket.Location = cleanStrings(s.Text())
+				ticket.Location = CleanStrings(s.Text())
 			case 6:
-				val := cleanStrings(s.Text())
+				val := CleanStrings(s.Text())
 				ticket.Ammount = val
 				ticket.Total = val
 			}

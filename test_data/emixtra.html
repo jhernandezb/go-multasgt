@@ -1,0 +1,2829 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Consulta de remisiones | MuniMixco</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="views/style/css/bootstrap.min.css">
+    <link rel="stylesheet" href="views/style/css/bootstrap.css">
+    <link rel="stylesheet" href="views/style/css/main.css">
+    <link href="../style/css/style.css" rel="stylesheet">
+    <link href="views/style/css/style-responsive.css" rel="stylesheet" />
+    <script src='style/js/jsjquery-1.8.3.min.js'></script>
+    <script src='style/js/jsjquery.elevatezoom.js'></script>
+        <script src="style/js/jquery.js"></script>
+    <script src="style/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="style/js/bootstrap.js"></script>
+ 
+ 
+</head>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-80848040-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<body>
+<meta charset="UTF-8">
+
+<style type="text/css">
+	.img-zoom {
+    	width: 90px;
+    	height: 90px;
+    -webkit-transition: all .6s ease-in-out;
+    -moz-transition: all .6s ease-in-out;
+    -o-transition: all .6s ease-in-out;
+    -ms-transition: all .6s ease-in-out;
+}
+ 
+.transition {
+    -webkit-transform: scale(4); 
+    -moz-transform: scale(4);
+    -o-transform: scale(4);
+    transform: scale(4);
+}
+</style>
+
+<script>
+  $(document).ready(function(){
+    $('.img-zoom').hover(function() {
+        $(this).addClass('transition');
+ 
+    }, function() {
+        $(this).removeClass('transition');
+    });
+  });
+</script>
+
+<style type="text/css">
+
+	.transp-block {
+		background: #000 url(http://munimixco.gt/ciudad/wp-content/uploads/2016/01/1-LOGO-MIXCO.jpg) no-repeat;
+		width: 575px;
+		height: 335px;
+	}
+	img.transparent {
+		filter:alpha(opacity=75);
+		opacity:.75;
+	}
+</style>
+
+
+<br>
+<br>
+<div class="row">
+	<div class="col-xs-1">
+
+	</div>
+	<div class="col-xs-10">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<div class="row">
+					<div class="col-xs-2">
+						<br>
+						<img src="http://www.munimixco.gt/ciudad/wp-content/uploads/2015/12/munimixco-logotipo.png" class="img-responsive" width="175" eight="250">
+					</div>
+					<div class="col-xs-7">
+						<h3>Municipalidad de Mixco</h3>
+					</div>
+					<div class="col-xs-3">
+						<br>
+						<h6>Fecha:</h6>
+						<h6>
+							11-01-18 						</h6>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-4">
+
+					</div>
+					<div class="col-xs-4">
+
+					</div>
+					<div class="col-xs-4">
+
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-xs-8">
+						<div class="panel panel-default">
+							<div class="panel-body">
+								<div class="row">
+																		<div class="col-xs-3" style="background:#0079D2;border-bottom:1pt solid #000000;">
+										<h6 style="color:white;"><strong>Placa</strong></h6>
+									</div>
+									<div class="col-xs-3" style="background:#0079D2;border-bottom:1pt solid #000000;">
+										<h6 style="color:white;"><strong>Marca</strong></h6>
+									</div>
+									<div class="col-xs-3" style="background:#0079D2;border-bottom:1pt solid #000000;">
+										<h6 style="color:white;"><strong>Color</strong></h6>
+									</div>
+									<div class="col-xs-3" style="background:#0079D2;border-bottom:1pt solid #000000;">
+										<h6 style="color:white;"><strong>Modelo</strong></h6>
+									</div>
+
+								</div>
+								<div class="row">
+									<div class="col-xs-3">
+										<h6>P-308FZS</h6>
+									</div>
+									<div class="col-xs-3">
+										<h6>TOYOTA</h6>
+									</div>
+									<div class="col-xs-3">
+										<h6>GRIS</h6>
+									</div>
+									<div class="col-xs-3">
+										<h6>---------</h6>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="panel panel-default">
+							<div class="panel-body">
+								<div class="row">
+									<div class="col-xs-2" style="background:#0079D2;border-bottom:1pt solid #000000;">
+										<h6 style="color:white;"><strong>Remisión</strong></h6>
+									</div>
+									<div class="col-xs-2" style="background:#0079D2;border-bottom:1pt solid #000000;">
+										<h6 style="color:white;"><strong>Fecha/Hora</strong></h6>
+									</div>
+									<div class="col-xs-2" style="background:#0079D2;border-bottom:1pt solid #000000;">
+										<h6 style="color:white;"><strong>Lugar</strong></h6>
+									</div>
+									<div class="col-xs-2" style="background:#0079D2;border-bottom:1pt solid #000000;">
+										<h6 style="color:white;"><strong>Monto</strong></h6>
+									</div>
+									<div class="col-xs-2" style="background:#0079D2;border-bottom:1pt solid #000000;">
+										<h6 style="color:white;"><strong>Descuento</strong></h6>
+									</div>
+									<div class="col-xs-2" style="background:#0079D2;border-bottom:1pt solid #000000;">
+										<h6 style="color:white;"><strong>Total</strong></h6>
+									</div>
+								</div>
+
+								
+
+
+								
+
+
+
+									<div class="row">
+										<div class="col-xs-2">
+											<h6>F0694510</h6>
+										</div>
+										<div class="col-xs-2">
+											<h6>23-JAN-17</h6>
+										</div>
+										<div class="col-xs-2">
+											<h6>Km.13 Clzda. Roosevelt hacia Mixco</h6>
+										</div>
+										<div class="col-xs-2">
+										
+											Q 300.00
+
+							
+										</div>
+										<div class="col-xs-2">
+											<h6>Q 75.00</h6>
+										</div>
+										<div class="col-xs-2">
+											<h6>
+												<strong>
+													Q 225.00												</strong>
+
+											</h6>
+										</div>
+																			</div>
+									<div class="row">
+										<div class="col-xs-2">
+
+										</div>
+										<div class="col-xs-8">
+											<h6>
+												<strong>
+													----Detalle-----
+												</strong>
+											</h6>
+										</div>
+										<div class="col-xs-1">
+
+
+
+
+											<h6>
+
+												<center>
+														<!--  Empieza la busqueda de la foto  -->			
+																
+															<h6>
+
+													<img  src='http://consultas.munimixco.gob.gt/img/view/F0694510P308FZS.jpg' alt='Vehiculo' width='150' height='150' class='img-zoom'>
+					
+														
+				
+                           
+						</h6>													
+																			</center>
+																			<br>
+																			<br>
+											</h6>
+										</div>
+									</div>
+									<!--inicio de detalle del articulo-->
+									<div class="row">
+										<div class="col-xs-2">
+											
+										</div>
+										<div class="col-xs-8">
+											<div class="row">
+												<div class="col-xs-2">
+													<h6>Articulo</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>Motivo</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>Infractor</h6>
+												</div>
+												
+											</div>
+										</div>
+										<div class="col-xs-2">
+											
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-xs-2">
+											
+										</div>
+										<div class="col-xs-8">
+											<div class="row">
+												<div class="col-xs-2">
+													<h6>182.12</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>Por no cumplir los limites de velocidad maxima.</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>NO SE CONSIGNO </h6>
+												</div>
+												
+											</div>
+										</div>
+										<div class="col-xs-2">
+											
+										</div>
+									</div>
+									<!-- fin de detalle-->
+									<div class="row">
+										<div class="col-xs-4" style=" border-top:1pt solid #000000;">
+
+										</div>
+										<div class="col-xs-4" style=" border-top:1pt solid #000000;">
+
+										</div>
+										<div class="col-xs-4" style=" border-top:1pt solid #000000;">
+
+										</div>
+									</div>
+
+								
+
+
+
+									<div class="row">
+										<div class="col-xs-2">
+											<h6>F0671533</h6>
+										</div>
+										<div class="col-xs-2">
+											<h6>05-SEP-16</h6>
+										</div>
+										<div class="col-xs-2">
+											<h6>Km. 13 Calzada roosevelt hacia Mixco</h6>
+										</div>
+										<div class="col-xs-2">
+										
+											Q 300.00
+
+							
+										</div>
+										<div class="col-xs-2">
+											<h6>Q 75.00</h6>
+										</div>
+										<div class="col-xs-2">
+											<h6>
+												<strong>
+													Q 225.00												</strong>
+
+											</h6>
+										</div>
+																			</div>
+									<div class="row">
+										<div class="col-xs-2">
+
+										</div>
+										<div class="col-xs-8">
+											<h6>
+												<strong>
+													----Detalle-----
+												</strong>
+											</h6>
+										</div>
+										<div class="col-xs-1">
+
+
+
+
+											<h6>
+
+												<center>
+														<!--  Empieza la busqueda de la foto  -->			
+																
+															<h6>
+
+													<img  src='http://consultas.munimixco.gob.gt/img/view/F0671533P308FZS.jpg' alt='Vehiculo' width='150' height='150' class='img-zoom'>
+					
+														
+				
+                           
+						</h6>													
+																			</center>
+																			<br>
+																			<br>
+											</h6>
+										</div>
+									</div>
+									<!--inicio de detalle del articulo-->
+									<div class="row">
+										<div class="col-xs-2">
+											
+										</div>
+										<div class="col-xs-8">
+											<div class="row">
+												<div class="col-xs-2">
+													<h6>Articulo</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>Motivo</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>Infractor</h6>
+												</div>
+												
+											</div>
+										</div>
+										<div class="col-xs-2">
+											
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-xs-2">
+											
+										</div>
+										<div class="col-xs-8">
+											<div class="row">
+												<div class="col-xs-2">
+													<h6>182.12</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>Por no cumplir los limites de velocidad maxima.</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>NO SE CONSIGNO </h6>
+												</div>
+												
+											</div>
+										</div>
+										<div class="col-xs-2">
+											
+										</div>
+									</div>
+									<!-- fin de detalle-->
+									<div class="row">
+										<div class="col-xs-4" style=" border-top:1pt solid #000000;">
+
+										</div>
+										<div class="col-xs-4" style=" border-top:1pt solid #000000;">
+
+										</div>
+										<div class="col-xs-4" style=" border-top:1pt solid #000000;">
+
+										</div>
+									</div>
+
+								
+
+
+
+									<div class="row">
+										<div class="col-xs-2">
+											<h6>F0621159</h6>
+										</div>
+										<div class="col-xs-2">
+											<h6>13-JAN-16</h6>
+										</div>
+										<div class="col-xs-2">
+											<h6>Km.13 Clzda. Roosevelt hacia Guatemala</h6>
+										</div>
+										<div class="col-xs-2">
+										
+											Q 300.00
+
+							
+										</div>
+										<div class="col-xs-2">
+											<h6>Q 75.00</h6>
+										</div>
+										<div class="col-xs-2">
+											<h6>
+												<strong>
+													Q 225.00												</strong>
+
+											</h6>
+										</div>
+																			</div>
+									<div class="row">
+										<div class="col-xs-2">
+
+										</div>
+										<div class="col-xs-8">
+											<h6>
+												<strong>
+													----Detalle-----
+												</strong>
+											</h6>
+										</div>
+										<div class="col-xs-1">
+
+
+
+
+											<h6>
+
+												<center>
+														<!--  Empieza la busqueda de la foto  -->			
+																
+															<h6>
+
+													<img  src='http://consultas.munimixco.gob.gt/img/view/F0621159P308FZS.jpg' alt='Vehiculo' width='150' height='150' class='img-zoom'>
+					
+														
+				
+                           
+						</h6>													
+																			</center>
+																			<br>
+																			<br>
+											</h6>
+										</div>
+									</div>
+									<!--inicio de detalle del articulo-->
+									<div class="row">
+										<div class="col-xs-2">
+											
+										</div>
+										<div class="col-xs-8">
+											<div class="row">
+												<div class="col-xs-2">
+													<h6>Articulo</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>Motivo</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>Infractor</h6>
+												</div>
+												
+											</div>
+										</div>
+										<div class="col-xs-2">
+											
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-xs-2">
+											
+										</div>
+										<div class="col-xs-8">
+											<div class="row">
+												<div class="col-xs-2">
+													<h6>182.12</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>Por no cumplir los limites de velocidad maxima.</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>NO SE CONSIGNO </h6>
+												</div>
+												
+											</div>
+										</div>
+										<div class="col-xs-2">
+											
+										</div>
+									</div>
+									<!-- fin de detalle-->
+									<div class="row">
+										<div class="col-xs-4" style=" border-top:1pt solid #000000;">
+
+										</div>
+										<div class="col-xs-4" style=" border-top:1pt solid #000000;">
+
+										</div>
+										<div class="col-xs-4" style=" border-top:1pt solid #000000;">
+
+										</div>
+									</div>
+
+								
+
+
+
+									<div class="row">
+										<div class="col-xs-2">
+											<h6>F0695413</h6>
+										</div>
+										<div class="col-xs-2">
+											<h6>27-JAN-17</h6>
+										</div>
+										<div class="col-xs-2">
+											<h6>Km.13 Clzda Roosevelt hacia Guatemala</h6>
+										</div>
+										<div class="col-xs-2">
+										
+											Q 300.00
+
+							
+										</div>
+										<div class="col-xs-2">
+											<h6>Q 75.00</h6>
+										</div>
+										<div class="col-xs-2">
+											<h6>
+												<strong>
+													Q 225.00												</strong>
+
+											</h6>
+										</div>
+																			</div>
+									<div class="row">
+										<div class="col-xs-2">
+
+										</div>
+										<div class="col-xs-8">
+											<h6>
+												<strong>
+													----Detalle-----
+												</strong>
+											</h6>
+										</div>
+										<div class="col-xs-1">
+
+
+
+
+											<h6>
+
+												<center>
+														<!--  Empieza la busqueda de la foto  -->			
+																
+															<h6>
+
+													<img  src='http://consultas.munimixco.gob.gt/img/view/F0695413P308FZS.jpg' alt='Vehiculo' width='150' height='150' class='img-zoom'>
+					
+														
+				
+                           
+						</h6>													
+																			</center>
+																			<br>
+																			<br>
+											</h6>
+										</div>
+									</div>
+									<!--inicio de detalle del articulo-->
+									<div class="row">
+										<div class="col-xs-2">
+											
+										</div>
+										<div class="col-xs-8">
+											<div class="row">
+												<div class="col-xs-2">
+													<h6>Articulo</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>Motivo</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>Infractor</h6>
+												</div>
+												
+											</div>
+										</div>
+										<div class="col-xs-2">
+											
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-xs-2">
+											
+										</div>
+										<div class="col-xs-8">
+											<div class="row">
+												<div class="col-xs-2">
+													<h6>182.12</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>Por no cumplir los limites de velocidad maxima.</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>NO SE CONSIGNO </h6>
+												</div>
+												
+											</div>
+										</div>
+										<div class="col-xs-2">
+											
+										</div>
+									</div>
+									<!-- fin de detalle-->
+									<div class="row">
+										<div class="col-xs-4" style=" border-top:1pt solid #000000;">
+
+										</div>
+										<div class="col-xs-4" style=" border-top:1pt solid #000000;">
+
+										</div>
+										<div class="col-xs-4" style=" border-top:1pt solid #000000;">
+
+										</div>
+									</div>
+
+								
+
+
+
+									<div class="row">
+										<div class="col-xs-2">
+											<h6>F0688833</h6>
+										</div>
+										<div class="col-xs-2">
+											<h6>14-JAN-17</h6>
+										</div>
+										<div class="col-xs-2">
+											<h6>Km.13 Calzada roosevelt hacia Mixco</h6>
+										</div>
+										<div class="col-xs-2">
+										
+											Q 300.00
+
+							
+										</div>
+										<div class="col-xs-2">
+											<h6>Q 75.00</h6>
+										</div>
+										<div class="col-xs-2">
+											<h6>
+												<strong>
+													Q 225.00												</strong>
+
+											</h6>
+										</div>
+																			</div>
+									<div class="row">
+										<div class="col-xs-2">
+
+										</div>
+										<div class="col-xs-8">
+											<h6>
+												<strong>
+													----Detalle-----
+												</strong>
+											</h6>
+										</div>
+										<div class="col-xs-1">
+
+
+
+
+											<h6>
+
+												<center>
+														<!--  Empieza la busqueda de la foto  -->			
+																
+															<h6>
+
+													<img  src='http://consultas.munimixco.gob.gt/img/view/F0688833P308FZS.jpg' alt='Vehiculo' width='150' height='150' class='img-zoom'>
+					
+														
+				
+                           
+						</h6>													
+																			</center>
+																			<br>
+																			<br>
+											</h6>
+										</div>
+									</div>
+									<!--inicio de detalle del articulo-->
+									<div class="row">
+										<div class="col-xs-2">
+											
+										</div>
+										<div class="col-xs-8">
+											<div class="row">
+												<div class="col-xs-2">
+													<h6>Articulo</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>Motivo</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>Infractor</h6>
+												</div>
+												
+											</div>
+										</div>
+										<div class="col-xs-2">
+											
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-xs-2">
+											
+										</div>
+										<div class="col-xs-8">
+											<div class="row">
+												<div class="col-xs-2">
+													<h6>182.12</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>Por no cumplir los limites de velocidad maxima.</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>NO SE CONSIGNO </h6>
+												</div>
+												
+											</div>
+										</div>
+										<div class="col-xs-2">
+											
+										</div>
+									</div>
+									<!-- fin de detalle-->
+									<div class="row">
+										<div class="col-xs-4" style=" border-top:1pt solid #000000;">
+
+										</div>
+										<div class="col-xs-4" style=" border-top:1pt solid #000000;">
+
+										</div>
+										<div class="col-xs-4" style=" border-top:1pt solid #000000;">
+
+										</div>
+									</div>
+
+								
+
+
+
+									<div class="row">
+										<div class="col-xs-2">
+											<h6>F0786808</h6>
+										</div>
+										<div class="col-xs-2">
+											<h6>14-OCT-17</h6>
+										</div>
+										<div class="col-xs-2">
+											<h6>Km.13 Clzda. Roosevelt zona 2 de Mixco hacia Guatemala</h6>
+										</div>
+										<div class="col-xs-2">
+										
+											Q 300.00
+
+							
+										</div>
+										<div class="col-xs-2">
+											<h6>Q 75.00</h6>
+										</div>
+										<div class="col-xs-2">
+											<h6>
+												<strong>
+													Q 225.00												</strong>
+
+											</h6>
+										</div>
+																			</div>
+									<div class="row">
+										<div class="col-xs-2">
+
+										</div>
+										<div class="col-xs-8">
+											<h6>
+												<strong>
+													----Detalle-----
+												</strong>
+											</h6>
+										</div>
+										<div class="col-xs-1">
+
+
+
+
+											<h6>
+
+												<center>
+														<!--  Empieza la busqueda de la foto  -->			
+																
+															<h6>
+
+													<img  src='http://consultas.munimixco.gob.gt/img/view/F0786808P308FZS.jpg' alt='Vehiculo' width='150' height='150' class='img-zoom'>
+					
+														
+				
+                           
+						</h6>													
+																			</center>
+																			<br>
+																			<br>
+											</h6>
+										</div>
+									</div>
+									<!--inicio de detalle del articulo-->
+									<div class="row">
+										<div class="col-xs-2">
+											
+										</div>
+										<div class="col-xs-8">
+											<div class="row">
+												<div class="col-xs-2">
+													<h6>Articulo</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>Motivo</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>Infractor</h6>
+												</div>
+												
+											</div>
+										</div>
+										<div class="col-xs-2">
+											
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-xs-2">
+											
+										</div>
+										<div class="col-xs-8">
+											<div class="row">
+												<div class="col-xs-2">
+													<h6>182.12</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>Por no cumplir los limites de velocidad maxima.</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>NO SE CONSIGNO </h6>
+												</div>
+												
+											</div>
+										</div>
+										<div class="col-xs-2">
+											
+										</div>
+									</div>
+									<!-- fin de detalle-->
+									<div class="row">
+										<div class="col-xs-4" style=" border-top:1pt solid #000000;">
+
+										</div>
+										<div class="col-xs-4" style=" border-top:1pt solid #000000;">
+
+										</div>
+										<div class="col-xs-4" style=" border-top:1pt solid #000000;">
+
+										</div>
+									</div>
+
+								
+
+
+
+									<div class="row">
+										<div class="col-xs-2">
+											<h6>F0809163</h6>
+										</div>
+										<div class="col-xs-2">
+											<h6>25-NOV-17</h6>
+										</div>
+										<div class="col-xs-2">
+											<h6>km 13. Calzada Roosevelt zona 3 de Mixco</h6>
+										</div>
+										<div class="col-xs-2">
+										
+											Q 300.00
+
+							
+										</div>
+										<div class="col-xs-2">
+											<h6>Q 75.00</h6>
+										</div>
+										<div class="col-xs-2">
+											<h6>
+												<strong>
+													Q 225.00												</strong>
+
+											</h6>
+										</div>
+																			</div>
+									<div class="row">
+										<div class="col-xs-2">
+
+										</div>
+										<div class="col-xs-8">
+											<h6>
+												<strong>
+													----Detalle-----
+												</strong>
+											</h6>
+										</div>
+										<div class="col-xs-1">
+
+
+
+
+											<h6>
+
+												<center>
+														<!--  Empieza la busqueda de la foto  -->			
+																
+															<h6>
+
+													<img  src='http://consultas.munimixco.gob.gt/img/view/F0809163P308FZS.jpg' alt='Vehiculo' width='150' height='150' class='img-zoom'>
+					
+														
+				
+                           
+						</h6>													
+																			</center>
+																			<br>
+																			<br>
+											</h6>
+										</div>
+									</div>
+									<!--inicio de detalle del articulo-->
+									<div class="row">
+										<div class="col-xs-2">
+											
+										</div>
+										<div class="col-xs-8">
+											<div class="row">
+												<div class="col-xs-2">
+													<h6>Articulo</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>Motivo</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>Infractor</h6>
+												</div>
+												
+											</div>
+										</div>
+										<div class="col-xs-2">
+											
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-xs-2">
+											
+										</div>
+										<div class="col-xs-8">
+											<div class="row">
+												<div class="col-xs-2">
+													<h6>182.12</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>Por no cumplir los limites de velocidad maxima.</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>NO SE CONSIGNO </h6>
+												</div>
+												
+											</div>
+										</div>
+										<div class="col-xs-2">
+											
+										</div>
+									</div>
+									<!-- fin de detalle-->
+									<div class="row">
+										<div class="col-xs-4" style=" border-top:1pt solid #000000;">
+
+										</div>
+										<div class="col-xs-4" style=" border-top:1pt solid #000000;">
+
+										</div>
+										<div class="col-xs-4" style=" border-top:1pt solid #000000;">
+
+										</div>
+									</div>
+
+								
+
+
+
+									<div class="row">
+										<div class="col-xs-2">
+											<h6>F0674919</h6>
+										</div>
+										<div class="col-xs-2">
+											<h6>11-DEC-16</h6>
+										</div>
+										<div class="col-xs-2">
+											<h6>Km.13 Clzda. Roosevelt hacia Guatemala</h6>
+										</div>
+										<div class="col-xs-2">
+										
+											Q 300.00
+
+							
+										</div>
+										<div class="col-xs-2">
+											<h6>Q 75.00</h6>
+										</div>
+										<div class="col-xs-2">
+											<h6>
+												<strong>
+													Q 225.00												</strong>
+
+											</h6>
+										</div>
+																			</div>
+									<div class="row">
+										<div class="col-xs-2">
+
+										</div>
+										<div class="col-xs-8">
+											<h6>
+												<strong>
+													----Detalle-----
+												</strong>
+											</h6>
+										</div>
+										<div class="col-xs-1">
+
+
+
+
+											<h6>
+
+												<center>
+														<!--  Empieza la busqueda de la foto  -->			
+																
+															<h6>
+
+													<img  src='http://consultas.munimixco.gob.gt/img/view/F0674919P308FZS.jpg' alt='Vehiculo' width='150' height='150' class='img-zoom'>
+					
+														
+				
+                           
+						</h6>													
+																			</center>
+																			<br>
+																			<br>
+											</h6>
+										</div>
+									</div>
+									<!--inicio de detalle del articulo-->
+									<div class="row">
+										<div class="col-xs-2">
+											
+										</div>
+										<div class="col-xs-8">
+											<div class="row">
+												<div class="col-xs-2">
+													<h6>Articulo</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>Motivo</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>Infractor</h6>
+												</div>
+												
+											</div>
+										</div>
+										<div class="col-xs-2">
+											
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-xs-2">
+											
+										</div>
+										<div class="col-xs-8">
+											<div class="row">
+												<div class="col-xs-2">
+													<h6>182.12</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>Por no cumplir los limites de velocidad maxima.</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>NO SE CONSIGNO </h6>
+												</div>
+												
+											</div>
+										</div>
+										<div class="col-xs-2">
+											
+										</div>
+									</div>
+									<!-- fin de detalle-->
+									<div class="row">
+										<div class="col-xs-4" style=" border-top:1pt solid #000000;">
+
+										</div>
+										<div class="col-xs-4" style=" border-top:1pt solid #000000;">
+
+										</div>
+										<div class="col-xs-4" style=" border-top:1pt solid #000000;">
+
+										</div>
+									</div>
+
+								
+
+
+
+									<div class="row">
+										<div class="col-xs-2">
+											<h6>F0666751</h6>
+										</div>
+										<div class="col-xs-2">
+											<h6>26-AUG-16</h6>
+										</div>
+										<div class="col-xs-2">
+											<h6>Km.13 Clzda. Roosevelt hacia Mixco</h6>
+										</div>
+										<div class="col-xs-2">
+										
+											Q 300.00
+
+							
+										</div>
+										<div class="col-xs-2">
+											<h6>Q 75.00</h6>
+										</div>
+										<div class="col-xs-2">
+											<h6>
+												<strong>
+													Q 225.00												</strong>
+
+											</h6>
+										</div>
+																			</div>
+									<div class="row">
+										<div class="col-xs-2">
+
+										</div>
+										<div class="col-xs-8">
+											<h6>
+												<strong>
+													----Detalle-----
+												</strong>
+											</h6>
+										</div>
+										<div class="col-xs-1">
+
+
+
+
+											<h6>
+
+												<center>
+														<!--  Empieza la busqueda de la foto  -->			
+																
+															<h6>
+
+													<img  src='http://consultas.munimixco.gob.gt/img/view/F0666751P308FZS.jpg' alt='Vehiculo' width='150' height='150' class='img-zoom'>
+					
+														
+				
+                           
+						</h6>													
+																			</center>
+																			<br>
+																			<br>
+											</h6>
+										</div>
+									</div>
+									<!--inicio de detalle del articulo-->
+									<div class="row">
+										<div class="col-xs-2">
+											
+										</div>
+										<div class="col-xs-8">
+											<div class="row">
+												<div class="col-xs-2">
+													<h6>Articulo</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>Motivo</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>Infractor</h6>
+												</div>
+												
+											</div>
+										</div>
+										<div class="col-xs-2">
+											
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-xs-2">
+											
+										</div>
+										<div class="col-xs-8">
+											<div class="row">
+												<div class="col-xs-2">
+													<h6>182.12</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>Por no cumplir los limites de velocidad maxima.</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>NO SE CONSIGNO </h6>
+												</div>
+												
+											</div>
+										</div>
+										<div class="col-xs-2">
+											
+										</div>
+									</div>
+									<!-- fin de detalle-->
+									<div class="row">
+										<div class="col-xs-4" style=" border-top:1pt solid #000000;">
+
+										</div>
+										<div class="col-xs-4" style=" border-top:1pt solid #000000;">
+
+										</div>
+										<div class="col-xs-4" style=" border-top:1pt solid #000000;">
+
+										</div>
+									</div>
+
+								
+
+
+
+									<div class="row">
+										<div class="col-xs-2">
+											<h6>F0667978</h6>
+										</div>
+										<div class="col-xs-2">
+											<h6>28-AUG-16</h6>
+										</div>
+										<div class="col-xs-2">
+											<h6>Km.13 Calzada Roosevelt hacia Mixco</h6>
+										</div>
+										<div class="col-xs-2">
+										
+											Q 300.00
+
+							
+										</div>
+										<div class="col-xs-2">
+											<h6>Q 75.00</h6>
+										</div>
+										<div class="col-xs-2">
+											<h6>
+												<strong>
+													Q 225.00												</strong>
+
+											</h6>
+										</div>
+																			</div>
+									<div class="row">
+										<div class="col-xs-2">
+
+										</div>
+										<div class="col-xs-8">
+											<h6>
+												<strong>
+													----Detalle-----
+												</strong>
+											</h6>
+										</div>
+										<div class="col-xs-1">
+
+
+
+
+											<h6>
+
+												<center>
+														<!--  Empieza la busqueda de la foto  -->			
+																
+															<h6>
+
+													<img  src='http://consultas.munimixco.gob.gt/img/view/F0667978P308FZS.jpg' alt='Vehiculo' width='150' height='150' class='img-zoom'>
+					
+														
+				
+                           
+						</h6>													
+																			</center>
+																			<br>
+																			<br>
+											</h6>
+										</div>
+									</div>
+									<!--inicio de detalle del articulo-->
+									<div class="row">
+										<div class="col-xs-2">
+											
+										</div>
+										<div class="col-xs-8">
+											<div class="row">
+												<div class="col-xs-2">
+													<h6>Articulo</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>Motivo</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>Infractor</h6>
+												</div>
+												
+											</div>
+										</div>
+										<div class="col-xs-2">
+											
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-xs-2">
+											
+										</div>
+										<div class="col-xs-8">
+											<div class="row">
+												<div class="col-xs-2">
+													<h6>182.12</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>Por no cumplir los limites de velocidad maxima.</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>NO SE CONSIGNO </h6>
+												</div>
+												
+											</div>
+										</div>
+										<div class="col-xs-2">
+											
+										</div>
+									</div>
+									<!-- fin de detalle-->
+									<div class="row">
+										<div class="col-xs-4" style=" border-top:1pt solid #000000;">
+
+										</div>
+										<div class="col-xs-4" style=" border-top:1pt solid #000000;">
+
+										</div>
+										<div class="col-xs-4" style=" border-top:1pt solid #000000;">
+
+										</div>
+									</div>
+
+								
+
+
+
+									<div class="row">
+										<div class="col-xs-2">
+											<h6>F0651978</h6>
+										</div>
+										<div class="col-xs-2">
+											<h6>17-JUL-16</h6>
+										</div>
+										<div class="col-xs-2">
+											<h6>Km.13 Clzda. Roosevelt hacia Guatemala.</h6>
+										</div>
+										<div class="col-xs-2">
+										
+											Q 300.00
+
+							
+										</div>
+										<div class="col-xs-2">
+											<h6>Q 75.00</h6>
+										</div>
+										<div class="col-xs-2">
+											<h6>
+												<strong>
+													Q 225.00												</strong>
+
+											</h6>
+										</div>
+																			</div>
+									<div class="row">
+										<div class="col-xs-2">
+
+										</div>
+										<div class="col-xs-8">
+											<h6>
+												<strong>
+													----Detalle-----
+												</strong>
+											</h6>
+										</div>
+										<div class="col-xs-1">
+
+
+
+
+											<h6>
+
+												<center>
+														<!--  Empieza la busqueda de la foto  -->			
+																
+															<h6>
+
+													<img  src='http://consultas.munimixco.gob.gt/img/view/F0651978P308FZS.jpg' alt='Vehiculo' width='150' height='150' class='img-zoom'>
+					
+														
+				
+                           
+						</h6>													
+																			</center>
+																			<br>
+																			<br>
+											</h6>
+										</div>
+									</div>
+									<!--inicio de detalle del articulo-->
+									<div class="row">
+										<div class="col-xs-2">
+											
+										</div>
+										<div class="col-xs-8">
+											<div class="row">
+												<div class="col-xs-2">
+													<h6>Articulo</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>Motivo</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>Infractor</h6>
+												</div>
+												
+											</div>
+										</div>
+										<div class="col-xs-2">
+											
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-xs-2">
+											
+										</div>
+										<div class="col-xs-8">
+											<div class="row">
+												<div class="col-xs-2">
+													<h6>182.12</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>Por no cumplir los limites de velocidad maxima.</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>NO SE CONSIGNO </h6>
+												</div>
+												
+											</div>
+										</div>
+										<div class="col-xs-2">
+											
+										</div>
+									</div>
+									<!-- fin de detalle-->
+									<div class="row">
+										<div class="col-xs-4" style=" border-top:1pt solid #000000;">
+
+										</div>
+										<div class="col-xs-4" style=" border-top:1pt solid #000000;">
+
+										</div>
+										<div class="col-xs-4" style=" border-top:1pt solid #000000;">
+
+										</div>
+									</div>
+
+								
+
+
+
+									<div class="row">
+										<div class="col-xs-2">
+											<h6>F0638923</h6>
+										</div>
+										<div class="col-xs-2">
+											<h6>08-MAY-16</h6>
+										</div>
+										<div class="col-xs-2">
+											<h6>Km.13 Clzda. Roosevelt hacia Mixco</h6>
+										</div>
+										<div class="col-xs-2">
+										
+											Q 300.00
+
+							
+										</div>
+										<div class="col-xs-2">
+											<h6>Q 75.00</h6>
+										</div>
+										<div class="col-xs-2">
+											<h6>
+												<strong>
+													Q 225.00												</strong>
+
+											</h6>
+										</div>
+																			</div>
+									<div class="row">
+										<div class="col-xs-2">
+
+										</div>
+										<div class="col-xs-8">
+											<h6>
+												<strong>
+													----Detalle-----
+												</strong>
+											</h6>
+										</div>
+										<div class="col-xs-1">
+
+
+
+
+											<h6>
+
+												<center>
+														<!--  Empieza la busqueda de la foto  -->			
+																
+															<h6>
+
+													<img  src='http://consultas.munimixco.gob.gt/img/view/F0638923P308FZS.jpg' alt='Vehiculo' width='150' height='150' class='img-zoom'>
+					
+														
+				
+                           
+						</h6>													
+																			</center>
+																			<br>
+																			<br>
+											</h6>
+										</div>
+									</div>
+									<!--inicio de detalle del articulo-->
+									<div class="row">
+										<div class="col-xs-2">
+											
+										</div>
+										<div class="col-xs-8">
+											<div class="row">
+												<div class="col-xs-2">
+													<h6>Articulo</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>Motivo</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>Infractor</h6>
+												</div>
+												
+											</div>
+										</div>
+										<div class="col-xs-2">
+											
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-xs-2">
+											
+										</div>
+										<div class="col-xs-8">
+											<div class="row">
+												<div class="col-xs-2">
+													<h6>182.12</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>Por no cumplir los limites de velocidad maxima.</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>NO SE CONSIGNO </h6>
+												</div>
+												
+											</div>
+										</div>
+										<div class="col-xs-2">
+											
+										</div>
+									</div>
+									<!-- fin de detalle-->
+									<div class="row">
+										<div class="col-xs-4" style=" border-top:1pt solid #000000;">
+
+										</div>
+										<div class="col-xs-4" style=" border-top:1pt solid #000000;">
+
+										</div>
+										<div class="col-xs-4" style=" border-top:1pt solid #000000;">
+
+										</div>
+									</div>
+
+								
+
+
+
+									<div class="row">
+										<div class="col-xs-2">
+											<h6>F0622404</h6>
+										</div>
+										<div class="col-xs-2">
+											<h6>24-JAN-16</h6>
+										</div>
+										<div class="col-xs-2">
+											<h6>km. 13 calzada roosevelt hacia guatemala</h6>
+										</div>
+										<div class="col-xs-2">
+										
+											Q 300.00
+
+							
+										</div>
+										<div class="col-xs-2">
+											<h6>Q 75.00</h6>
+										</div>
+										<div class="col-xs-2">
+											<h6>
+												<strong>
+													Q 225.00												</strong>
+
+											</h6>
+										</div>
+																			</div>
+									<div class="row">
+										<div class="col-xs-2">
+
+										</div>
+										<div class="col-xs-8">
+											<h6>
+												<strong>
+													----Detalle-----
+												</strong>
+											</h6>
+										</div>
+										<div class="col-xs-1">
+
+
+
+
+											<h6>
+
+												<center>
+														<!--  Empieza la busqueda de la foto  -->			
+																
+															<h6>
+
+													<img  src='http://consultas.munimixco.gob.gt/img/view/F0622404P308FZS.jpg' alt='Vehiculo' width='150' height='150' class='img-zoom'>
+					
+														
+				
+                           
+						</h6>													
+																			</center>
+																			<br>
+																			<br>
+											</h6>
+										</div>
+									</div>
+									<!--inicio de detalle del articulo-->
+									<div class="row">
+										<div class="col-xs-2">
+											
+										</div>
+										<div class="col-xs-8">
+											<div class="row">
+												<div class="col-xs-2">
+													<h6>Articulo</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>Motivo</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>Infractor</h6>
+												</div>
+												
+											</div>
+										</div>
+										<div class="col-xs-2">
+											
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-xs-2">
+											
+										</div>
+										<div class="col-xs-8">
+											<div class="row">
+												<div class="col-xs-2">
+													<h6>182.12</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>Por no cumplir los limites de velocidad maxima.</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>NO SE CONSIGNO </h6>
+												</div>
+												
+											</div>
+										</div>
+										<div class="col-xs-2">
+											
+										</div>
+									</div>
+									<!-- fin de detalle-->
+									<div class="row">
+										<div class="col-xs-4" style=" border-top:1pt solid #000000;">
+
+										</div>
+										<div class="col-xs-4" style=" border-top:1pt solid #000000;">
+
+										</div>
+										<div class="col-xs-4" style=" border-top:1pt solid #000000;">
+
+										</div>
+									</div>
+
+								
+
+
+
+									<div class="row">
+										<div class="col-xs-2">
+											<h6>F0810953</h6>
+										</div>
+										<div class="col-xs-2">
+											<h6>26-NOV-17</h6>
+										</div>
+										<div class="col-xs-2">
+											<h6>Km.13 calzada roosevelt zona 2 de Mixco hacia Guatemala</h6>
+										</div>
+										<div class="col-xs-2">
+										
+											Q 300.00
+
+							
+										</div>
+										<div class="col-xs-2">
+											<h6>Q 75.00</h6>
+										</div>
+										<div class="col-xs-2">
+											<h6>
+												<strong>
+													Q 225.00												</strong>
+
+											</h6>
+										</div>
+																			</div>
+									<div class="row">
+										<div class="col-xs-2">
+
+										</div>
+										<div class="col-xs-8">
+											<h6>
+												<strong>
+													----Detalle-----
+												</strong>
+											</h6>
+										</div>
+										<div class="col-xs-1">
+
+
+
+
+											<h6>
+
+												<center>
+														<!--  Empieza la busqueda de la foto  -->			
+																
+															<h6>
+
+													<img  src='http://consultas.munimixco.gob.gt/img/view/F0810953P308FZS.jpg' alt='Vehiculo' width='150' height='150' class='img-zoom'>
+					
+														
+				
+                           
+						</h6>													
+																			</center>
+																			<br>
+																			<br>
+											</h6>
+										</div>
+									</div>
+									<!--inicio de detalle del articulo-->
+									<div class="row">
+										<div class="col-xs-2">
+											
+										</div>
+										<div class="col-xs-8">
+											<div class="row">
+												<div class="col-xs-2">
+													<h6>Articulo</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>Motivo</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>Infractor</h6>
+												</div>
+												
+											</div>
+										</div>
+										<div class="col-xs-2">
+											
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-xs-2">
+											
+										</div>
+										<div class="col-xs-8">
+											<div class="row">
+												<div class="col-xs-2">
+													<h6>182.12</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>Por no cumplir los limites de velocidad maxima.</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>NO SE CONSIGNO </h6>
+												</div>
+												
+											</div>
+										</div>
+										<div class="col-xs-2">
+											
+										</div>
+									</div>
+									<!-- fin de detalle-->
+									<div class="row">
+										<div class="col-xs-4" style=" border-top:1pt solid #000000;">
+
+										</div>
+										<div class="col-xs-4" style=" border-top:1pt solid #000000;">
+
+										</div>
+										<div class="col-xs-4" style=" border-top:1pt solid #000000;">
+
+										</div>
+									</div>
+
+								
+
+
+
+									<div class="row">
+										<div class="col-xs-2">
+											<h6>F0710411</h6>
+										</div>
+										<div class="col-xs-2">
+											<h6>22-MAY-17</h6>
+										</div>
+										<div class="col-xs-2">
+											<h6>km. 13 Clzda. Roosevelt hacia Mixco.</h6>
+										</div>
+										<div class="col-xs-2">
+										
+											Q 300.00
+
+							
+										</div>
+										<div class="col-xs-2">
+											<h6>Q 75.00</h6>
+										</div>
+										<div class="col-xs-2">
+											<h6>
+												<strong>
+													Q 225.00												</strong>
+
+											</h6>
+										</div>
+																			</div>
+									<div class="row">
+										<div class="col-xs-2">
+
+										</div>
+										<div class="col-xs-8">
+											<h6>
+												<strong>
+													----Detalle-----
+												</strong>
+											</h6>
+										</div>
+										<div class="col-xs-1">
+
+
+
+
+											<h6>
+
+												<center>
+														<!--  Empieza la busqueda de la foto  -->			
+																
+															<h6>
+
+													<img  src='http://consultas.munimixco.gob.gt/img/view/F0710411P308FZS.jpg' alt='Vehiculo' width='150' height='150' class='img-zoom'>
+					
+														
+				
+                           
+						</h6>													
+																			</center>
+																			<br>
+																			<br>
+											</h6>
+										</div>
+									</div>
+									<!--inicio de detalle del articulo-->
+									<div class="row">
+										<div class="col-xs-2">
+											
+										</div>
+										<div class="col-xs-8">
+											<div class="row">
+												<div class="col-xs-2">
+													<h6>Articulo</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>Motivo</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>Infractor</h6>
+												</div>
+												
+											</div>
+										</div>
+										<div class="col-xs-2">
+											
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-xs-2">
+											
+										</div>
+										<div class="col-xs-8">
+											<div class="row">
+												<div class="col-xs-2">
+													<h6>182.12</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>Por no cumplir los limites de velocidad maxima.</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>NO SE CONSIGNO </h6>
+												</div>
+												
+											</div>
+										</div>
+										<div class="col-xs-2">
+											
+										</div>
+									</div>
+									<!-- fin de detalle-->
+									<div class="row">
+										<div class="col-xs-4" style=" border-top:1pt solid #000000;">
+
+										</div>
+										<div class="col-xs-4" style=" border-top:1pt solid #000000;">
+
+										</div>
+										<div class="col-xs-4" style=" border-top:1pt solid #000000;">
+
+										</div>
+									</div>
+
+								
+
+
+
+									<div class="row">
+										<div class="col-xs-2">
+											<h6>F0713298</h6>
+										</div>
+										<div class="col-xs-2">
+											<h6>28-MAY-17</h6>
+										</div>
+										<div class="col-xs-2">
+											<h6>Km. 13 Clzda. Roosevelt zona 2 de Mixco hacia Guatemala</h6>
+										</div>
+										<div class="col-xs-2">
+										
+											Q 300.00
+
+							
+										</div>
+										<div class="col-xs-2">
+											<h6>Q 75.00</h6>
+										</div>
+										<div class="col-xs-2">
+											<h6>
+												<strong>
+													Q 225.00												</strong>
+
+											</h6>
+										</div>
+																			</div>
+									<div class="row">
+										<div class="col-xs-2">
+
+										</div>
+										<div class="col-xs-8">
+											<h6>
+												<strong>
+													----Detalle-----
+												</strong>
+											</h6>
+										</div>
+										<div class="col-xs-1">
+
+
+
+
+											<h6>
+
+												<center>
+														<!--  Empieza la busqueda de la foto  -->			
+																
+															<h6>
+
+													<img  src='http://consultas.munimixco.gob.gt/img/view/F0713298P308FZS.jpg' alt='Vehiculo' width='150' height='150' class='img-zoom'>
+					
+														
+				
+                           
+						</h6>													
+																			</center>
+																			<br>
+																			<br>
+											</h6>
+										</div>
+									</div>
+									<!--inicio de detalle del articulo-->
+									<div class="row">
+										<div class="col-xs-2">
+											
+										</div>
+										<div class="col-xs-8">
+											<div class="row">
+												<div class="col-xs-2">
+													<h6>Articulo</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>Motivo</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>Infractor</h6>
+												</div>
+												
+											</div>
+										</div>
+										<div class="col-xs-2">
+											
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-xs-2">
+											
+										</div>
+										<div class="col-xs-8">
+											<div class="row">
+												<div class="col-xs-2">
+													<h6>182.12</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>Por no cumplir los limites de velocidad maxima.</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>NO SE CONSIGNO </h6>
+												</div>
+												
+											</div>
+										</div>
+										<div class="col-xs-2">
+											
+										</div>
+									</div>
+									<!-- fin de detalle-->
+									<div class="row">
+										<div class="col-xs-4" style=" border-top:1pt solid #000000;">
+
+										</div>
+										<div class="col-xs-4" style=" border-top:1pt solid #000000;">
+
+										</div>
+										<div class="col-xs-4" style=" border-top:1pt solid #000000;">
+
+										</div>
+									</div>
+
+								
+
+
+
+									<div class="row">
+										<div class="col-xs-2">
+											<h6>F0731395</h6>
+										</div>
+										<div class="col-xs-2">
+											<h6>02-JUL-17</h6>
+										</div>
+										<div class="col-xs-2">
+											<h6>Km.13 Calzada roosevelt zona 2 de Mixco hacia Guatemala</h6>
+										</div>
+										<div class="col-xs-2">
+										
+											Q 300.00
+
+							
+										</div>
+										<div class="col-xs-2">
+											<h6>Q 75.00</h6>
+										</div>
+										<div class="col-xs-2">
+											<h6>
+												<strong>
+													Q 225.00												</strong>
+
+											</h6>
+										</div>
+																			</div>
+									<div class="row">
+										<div class="col-xs-2">
+
+										</div>
+										<div class="col-xs-8">
+											<h6>
+												<strong>
+													----Detalle-----
+												</strong>
+											</h6>
+										</div>
+										<div class="col-xs-1">
+
+
+
+
+											<h6>
+
+												<center>
+														<!--  Empieza la busqueda de la foto  -->			
+																
+															<h6>
+
+													<img  src='http://consultas.munimixco.gob.gt/img/view/F0731395P308FZS.jpg' alt='Vehiculo' width='150' height='150' class='img-zoom'>
+					
+														
+				
+                           
+						</h6>													
+																			</center>
+																			<br>
+																			<br>
+											</h6>
+										</div>
+									</div>
+									<!--inicio de detalle del articulo-->
+									<div class="row">
+										<div class="col-xs-2">
+											
+										</div>
+										<div class="col-xs-8">
+											<div class="row">
+												<div class="col-xs-2">
+													<h6>Articulo</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>Motivo</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>Infractor</h6>
+												</div>
+												
+											</div>
+										</div>
+										<div class="col-xs-2">
+											
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-xs-2">
+											
+										</div>
+										<div class="col-xs-8">
+											<div class="row">
+												<div class="col-xs-2">
+													<h6>182.12</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>Por no cumplir los limites de velocidad maxima.</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>NO SE CONSIGNO </h6>
+												</div>
+												
+											</div>
+										</div>
+										<div class="col-xs-2">
+											
+										</div>
+									</div>
+									<!-- fin de detalle-->
+									<div class="row">
+										<div class="col-xs-4" style=" border-top:1pt solid #000000;">
+
+										</div>
+										<div class="col-xs-4" style=" border-top:1pt solid #000000;">
+
+										</div>
+										<div class="col-xs-4" style=" border-top:1pt solid #000000;">
+
+										</div>
+									</div>
+
+								
+
+
+
+									<div class="row">
+										<div class="col-xs-2">
+											<h6>F0737148</h6>
+										</div>
+										<div class="col-xs-2">
+											<h6>16-JUL-17</h6>
+										</div>
+										<div class="col-xs-2">
+											<h6>Km.13 Calzada roosevelt zona 2 de Mixco hacia Guatemala</h6>
+										</div>
+										<div class="col-xs-2">
+										
+											Q 300.00
+
+							
+										</div>
+										<div class="col-xs-2">
+											<h6>Q 75.00</h6>
+										</div>
+										<div class="col-xs-2">
+											<h6>
+												<strong>
+													Q 225.00												</strong>
+
+											</h6>
+										</div>
+																			</div>
+									<div class="row">
+										<div class="col-xs-2">
+
+										</div>
+										<div class="col-xs-8">
+											<h6>
+												<strong>
+													----Detalle-----
+												</strong>
+											</h6>
+										</div>
+										<div class="col-xs-1">
+
+
+
+
+											<h6>
+
+												<center>
+														<!--  Empieza la busqueda de la foto  -->			
+																
+															<h6>
+
+													<img  src='http://consultas.munimixco.gob.gt/img/view/F0737148P308FZS.jpg' alt='Vehiculo' width='150' height='150' class='img-zoom'>
+					
+														
+				
+                           
+						</h6>													
+																			</center>
+																			<br>
+																			<br>
+											</h6>
+										</div>
+									</div>
+									<!--inicio de detalle del articulo-->
+									<div class="row">
+										<div class="col-xs-2">
+											
+										</div>
+										<div class="col-xs-8">
+											<div class="row">
+												<div class="col-xs-2">
+													<h6>Articulo</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>Motivo</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>Infractor</h6>
+												</div>
+												
+											</div>
+										</div>
+										<div class="col-xs-2">
+											
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-xs-2">
+											
+										</div>
+										<div class="col-xs-8">
+											<div class="row">
+												<div class="col-xs-2">
+													<h6>182.12</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>Por no cumplir los limites de velocidad maxima.</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>NO SE CONSIGNO </h6>
+												</div>
+												
+											</div>
+										</div>
+										<div class="col-xs-2">
+											
+										</div>
+									</div>
+									<!-- fin de detalle-->
+									<div class="row">
+										<div class="col-xs-4" style=" border-top:1pt solid #000000;">
+
+										</div>
+										<div class="col-xs-4" style=" border-top:1pt solid #000000;">
+
+										</div>
+										<div class="col-xs-4" style=" border-top:1pt solid #000000;">
+
+										</div>
+									</div>
+
+								
+
+
+
+									<div class="row">
+										<div class="col-xs-2">
+											<h6>F0743509</h6>
+										</div>
+										<div class="col-xs-2">
+											<h6>30-JUL-17</h6>
+										</div>
+										<div class="col-xs-2">
+											<h6>km. 13 Calzada Roosevelt zona 3 de Mixco</h6>
+										</div>
+										<div class="col-xs-2">
+										
+											Q 300.00
+
+							
+										</div>
+										<div class="col-xs-2">
+											<h6>Q 75.00</h6>
+										</div>
+										<div class="col-xs-2">
+											<h6>
+												<strong>
+													Q 225.00												</strong>
+
+											</h6>
+										</div>
+																			</div>
+									<div class="row">
+										<div class="col-xs-2">
+
+										</div>
+										<div class="col-xs-8">
+											<h6>
+												<strong>
+													----Detalle-----
+												</strong>
+											</h6>
+										</div>
+										<div class="col-xs-1">
+
+
+
+
+											<h6>
+
+												<center>
+														<!--  Empieza la busqueda de la foto  -->			
+																
+															<h6>
+
+													<img  src='http://consultas.munimixco.gob.gt/img/view/F0743509P308FZS.jpg' alt='Vehiculo' width='150' height='150' class='img-zoom'>
+					
+														
+				
+                           
+						</h6>													
+																			</center>
+																			<br>
+																			<br>
+											</h6>
+										</div>
+									</div>
+									<!--inicio de detalle del articulo-->
+									<div class="row">
+										<div class="col-xs-2">
+											
+										</div>
+										<div class="col-xs-8">
+											<div class="row">
+												<div class="col-xs-2">
+													<h6>Articulo</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>Motivo</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>Infractor</h6>
+												</div>
+												
+											</div>
+										</div>
+										<div class="col-xs-2">
+											
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-xs-2">
+											
+										</div>
+										<div class="col-xs-8">
+											<div class="row">
+												<div class="col-xs-2">
+													<h6>182.12</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>Por no cumplir los limites de velocidad maxima.</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>NO SE CONSIGNO </h6>
+												</div>
+												
+											</div>
+										</div>
+										<div class="col-xs-2">
+											
+										</div>
+									</div>
+									<!-- fin de detalle-->
+									<div class="row">
+										<div class="col-xs-4" style=" border-top:1pt solid #000000;">
+
+										</div>
+										<div class="col-xs-4" style=" border-top:1pt solid #000000;">
+
+										</div>
+										<div class="col-xs-4" style=" border-top:1pt solid #000000;">
+
+										</div>
+									</div>
+
+								
+
+
+
+									<div class="row">
+										<div class="col-xs-2">
+											<h6>F0752462</h6>
+										</div>
+										<div class="col-xs-2">
+											<h6>15-AUG-17</h6>
+										</div>
+										<div class="col-xs-2">
+											<h6>km. 13 Calzada Roosevelt zona 2 de Mixco hacia Guatemala</h6>
+										</div>
+										<div class="col-xs-2">
+										
+											Q 300.00
+
+							
+										</div>
+										<div class="col-xs-2">
+											<h6>Q 75.00</h6>
+										</div>
+										<div class="col-xs-2">
+											<h6>
+												<strong>
+													Q 225.00												</strong>
+
+											</h6>
+										</div>
+																			</div>
+									<div class="row">
+										<div class="col-xs-2">
+
+										</div>
+										<div class="col-xs-8">
+											<h6>
+												<strong>
+													----Detalle-----
+												</strong>
+											</h6>
+										</div>
+										<div class="col-xs-1">
+
+
+
+
+											<h6>
+
+												<center>
+														<!--  Empieza la busqueda de la foto  -->			
+																
+															<h6>
+
+													<img  src='http://consultas.munimixco.gob.gt/img/view/F0752462P308FZS.jpg' alt='Vehiculo' width='150' height='150' class='img-zoom'>
+					
+														
+				
+                           
+						</h6>													
+																			</center>
+																			<br>
+																			<br>
+											</h6>
+										</div>
+									</div>
+									<!--inicio de detalle del articulo-->
+									<div class="row">
+										<div class="col-xs-2">
+											
+										</div>
+										<div class="col-xs-8">
+											<div class="row">
+												<div class="col-xs-2">
+													<h6>Articulo</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>Motivo</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>Infractor</h6>
+												</div>
+												
+											</div>
+										</div>
+										<div class="col-xs-2">
+											
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-xs-2">
+											
+										</div>
+										<div class="col-xs-8">
+											<div class="row">
+												<div class="col-xs-2">
+													<h6>182.12</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>Por no cumplir los limites de velocidad maxima.</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>NO SE CONSIGNO </h6>
+												</div>
+												
+											</div>
+										</div>
+										<div class="col-xs-2">
+											
+										</div>
+									</div>
+									<!-- fin de detalle-->
+									<div class="row">
+										<div class="col-xs-4" style=" border-top:1pt solid #000000;">
+
+										</div>
+										<div class="col-xs-4" style=" border-top:1pt solid #000000;">
+
+										</div>
+										<div class="col-xs-4" style=" border-top:1pt solid #000000;">
+
+										</div>
+									</div>
+
+								
+
+
+
+									<div class="row">
+										<div class="col-xs-2">
+											<h6>F0749779</h6>
+										</div>
+										<div class="col-xs-2">
+											<h6>13-AUG-17</h6>
+										</div>
+										<div class="col-xs-2">
+											<h6>Km.13 calzada roosevelt zona 3 de Mixco</h6>
+										</div>
+										<div class="col-xs-2">
+										
+											Q 300.00
+
+							
+										</div>
+										<div class="col-xs-2">
+											<h6>Q 75.00</h6>
+										</div>
+										<div class="col-xs-2">
+											<h6>
+												<strong>
+													Q 225.00												</strong>
+
+											</h6>
+										</div>
+																			</div>
+									<div class="row">
+										<div class="col-xs-2">
+
+										</div>
+										<div class="col-xs-8">
+											<h6>
+												<strong>
+													----Detalle-----
+												</strong>
+											</h6>
+										</div>
+										<div class="col-xs-1">
+
+
+
+
+											<h6>
+
+												<center>
+														<!--  Empieza la busqueda de la foto  -->			
+																
+															<h6>
+
+													<img  src='http://consultas.munimixco.gob.gt/img/view/F0749779P308FZS.jpg' alt='Vehiculo' width='150' height='150' class='img-zoom'>
+					
+														
+				
+                           
+						</h6>													
+																			</center>
+																			<br>
+																			<br>
+											</h6>
+										</div>
+									</div>
+									<!--inicio de detalle del articulo-->
+									<div class="row">
+										<div class="col-xs-2">
+											
+										</div>
+										<div class="col-xs-8">
+											<div class="row">
+												<div class="col-xs-2">
+													<h6>Articulo</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>Motivo</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>Infractor</h6>
+												</div>
+												
+											</div>
+										</div>
+										<div class="col-xs-2">
+											
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-xs-2">
+											
+										</div>
+										<div class="col-xs-8">
+											<div class="row">
+												<div class="col-xs-2">
+													<h6>182.12</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>Por no cumplir los limites de velocidad maxima.</h6>
+												</div>
+												<div class="col-xs-5">
+													<h6>NO SE CONSIGNO </h6>
+												</div>
+												
+											</div>
+										</div>
+										<div class="col-xs-2">
+											
+										</div>
+									</div>
+									<!-- fin de detalle-->
+									<div class="row">
+										<div class="col-xs-4" style=" border-top:1pt solid #000000;">
+
+										</div>
+										<div class="col-xs-4" style=" border-top:1pt solid #000000;">
+
+										</div>
+										<div class="col-xs-4" style=" border-top:1pt solid #000000;">
+
+										</div>
+									</div>
+
+								
+									<div class="row">
+									<div class="col-xs-2" style=" border-top:2pt solid #000000;">
+
+									</div>
+									<div class="col-xs-2" style=" border-top:2pt solid #000000;">
+
+									</div>
+									<div class="col-xs-2" style=" border-top:2pt solid #000000;">
+
+									</div>
+									<div class="col-xs-2" style=" border-top:2pt solid #000000;">
+										<h6><strong>Totales</strong></h6>
+									</div>
+									<div class="col-xs-2" style=" border-top:1pt solid #000000;">
+										<h6>
+											<strong>
+																							</strong>
+										</h6>
+									</div>
+									<div class="col-xs-2" style=" border-top:1pt solid #000000;">
+										<h6>
+											<strong>
+												Q 4,725.00											</strong>
+										</h6>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<div class="panel-footer">
+				<a href="javascript:window.print()" class="btn btn-info">Imprimir</a>
+				<!--<a href="views/pdf.php" class="btn btn-info">Generar PDF</a>-->
+				
+				<a href="javascript:history.back()" class="btn btn-success">Volver a Consultar</a>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="col-xs-1">
+
+</div>
+</div>

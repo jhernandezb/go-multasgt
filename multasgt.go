@@ -7,6 +7,8 @@ import (
 	"golang.org/x/net/html"
 )
 
+var cleanStringsRegex = regexp.MustCompile(`[\t\n\r]`)
+
 // Ticket represents the information related to the ticket.
 type Ticket struct {
 	ID       string `json:"id"`
@@ -25,7 +27,7 @@ type TicketChecker interface {
 	Check(plateType, plateNumber string) ([]Ticket, error)
 }
 
-func getAttribute(attrName string, n *html.Node) string {
+func GetAttribute(attrName string, n *html.Node) string {
 	if n == nil {
 		return ""
 	}
@@ -37,7 +39,7 @@ func getAttribute(attrName string, n *html.Node) string {
 	return ""
 }
 
-func cleanStrings(s string) string {
-	clean := regexp.MustCompile(`[\t\n\r]`)
-	return clean.ReplaceAllString(strings.TrimSpace(s), "")
+// CleanStrings removes any white unnecessary whitespace
+func CleanStrings(s string) string {
+	return cleanStringsRegex.ReplaceAllString(strings.TrimSpace(s), "")
 }

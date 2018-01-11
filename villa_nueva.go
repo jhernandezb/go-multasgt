@@ -61,21 +61,21 @@ func (f *VillaNueva) Check(plateType, plateNumber string) ([]Ticket, error) {
 		s.Find("td").Each(func(i int, sel *goquery.Selection) {
 			switch i {
 			case 1:
-				serie = cleanStrings(sel.Text())
+				serie = CleanStrings(sel.Text())
 			case 2:
-				ticket.ID = cleanStrings(sel.Text())
+				ticket.ID = CleanStrings(sel.Text())
 			case 3:
-				ticket.Date = cleanStrings(sel.Text())
+				ticket.Date = CleanStrings(sel.Text())
 			case 4:
-				ticket.Location = cleanStrings(sel.Text())
+				ticket.Location = CleanStrings(sel.Text())
 			case 5:
-				ticket.Info = cleanStrings(sel.Text())
+				ticket.Info = CleanStrings(sel.Text())
 			case 6:
-				ticket.Ammount = cleanStrings(sel.Text())
+				ticket.Ammount = CleanStrings(sel.Text())
 			case 7:
-				ticket.Discount = cleanStrings(sel.Text())
+				ticket.Discount = CleanStrings(sel.Text())
 			case 8:
-				ticket.Total = cleanStrings(sel.Text())
+				ticket.Total = CleanStrings(sel.Text())
 			}
 		})
 		ticket.Photo = fmt.Sprintf(villaNuevaPhotoURL, plateType, plateNumber, serie, ticket.ID)

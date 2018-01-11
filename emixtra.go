@@ -44,15 +44,15 @@ func (e *Emixtra) Check(plateType, plateNumber string) ([]Ticket, error) {
 			return
 		}
 		ticket = Ticket{Entity: exmitraEntity}
-		ticket.ID = cleanStrings(sel.Find(".panel-heading > .row > .col-md-5.col-xs-5").Text())
-		ticket.Date = cleanStrings(sel.Find(".panel-heading > .row > .col-md-6.col-xs-5").Text())
-		ticket.Location = cleanStrings(sel.Find(".panel-body > .row:nth-of-type(1) > .col-md-3.col-xs-9").Text())
-		ticket.Info = cleanStrings(sel.Find(".panel-body > .row:nth-of-type(3) > .col-md-5.col-xs-9").Text())
-		ticket.Ammount = cleanStrings(sel.Find(".panel-body > .row:nth-of-type(6) > div:nth-of-type(1)").Text())
-		ticket.Discount = cleanStrings(sel.Find(".panel-body > .row:nth-of-type(6) > div:nth-of-type(2)").Text())
-		ticket.Total = cleanStrings(sel.Find(".panel-body > .row:nth-of-type(6) > div:nth-of-type(3)").Text())
+		ticket.ID = CleanStrings(sel.Find(".panel-heading > .row > .col-md-5.col-xs-5").Text())
+		ticket.Date = CleanStrings(sel.Find(".panel-heading > .row > .col-md-6.col-xs-5").Text())
+		ticket.Location = CleanStrings(sel.Find(".panel-body > .row:nth-of-type(1) > .col-md-3.col-xs-9").Text())
+		ticket.Info = CleanStrings(sel.Find(".panel-body > .row:nth-of-type(3) > .col-md-5.col-xs-9").Text())
+		ticket.Ammount = CleanStrings(sel.Find(".panel-body > .row:nth-of-type(6) > div:nth-of-type(1)").Text())
+		ticket.Discount = CleanStrings(sel.Find(".panel-body > .row:nth-of-type(6) > div:nth-of-type(2)").Text())
+		ticket.Total = CleanStrings(sel.Find(".panel-body > .row:nth-of-type(6) > div:nth-of-type(3)").Text())
 		_photo := sel.Find(".panel-body > .row:nth-of-type(4) > .col-md-5 >  img")
-		ticket.Photo = getAttribute("src", _photo.Get(0))
+		ticket.Photo = GetAttribute("src", _photo.Get(0))
 		tickets = append(tickets, ticket)
 	})
 	return tickets, nil

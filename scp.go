@@ -49,14 +49,14 @@ func (s *SCP) Check(plateType, plateNumber string) ([]Ticket, error) {
 			}
 			switch cIdx {
 			case 0:
-				ticket.Date = cleanStrings(cSel.First().Text())
+				ticket.Date = CleanStrings(cSel.First().Text())
 			case 1:
 				// TODO: https://golang.org/src/image/decode_example_test.go
 				ticket.Photo = cSel.Find("img").AttrOr("src", "")
 			case 2:
 				// id := cSel.Find("#ctl03_lbBoleta").Text()
-				ticket.Info = cleanStrings(cSel.Find(`[id*="lbInfraccion"]`).Text())
-				ticket.Location = cleanStrings(cSel.Find(`[id*="_lbLugar"]`).Text())
+				ticket.Info = CleanStrings(cSel.Find(`[id*="lbInfraccion"]`).Text())
+				ticket.Location = CleanStrings(cSel.Find(`[id*="_lbLugar"]`).Text())
 			case 3:
 				ticket.Ammount = cSel.Find(`[id*="lbCostoMulta"]`).Text()
 				tickets = append(tickets, ticket)

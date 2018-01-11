@@ -54,13 +54,13 @@ func (f *Fraijanes) Check(plateType, plateNumber string) ([]Ticket, error) {
 		s.Find("td").Each(func(i int, sel *goquery.Selection) {
 			switch i {
 			case 0:
-				ticket.ID = cleanStrings(sel.Text())
+				ticket.ID = CleanStrings(sel.Text())
 			case 2:
-				ticket.Info = cleanStrings(sel.Text())
+				ticket.Info = CleanStrings(sel.Text())
 			case 3:
-				ticket.Info = fmt.Sprintf("%v, %v", ticket.Info, cleanStrings(sel.Text()))
+				ticket.Info = fmt.Sprintf("%v, %v", ticket.Info, CleanStrings(sel.Text()))
 			case 4:
-				val := cleanStrings(sel.Text())
+				val := CleanStrings(sel.Text())
 				ticket.Ammount = val
 				ticket.Total = val
 			}

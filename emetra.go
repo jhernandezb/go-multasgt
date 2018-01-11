@@ -30,7 +30,7 @@ func (e *Emetra) processEmetraTicket(wg *sync.WaitGroup, tickets []Ticket, idx i
 	}
 	photoURL := "http://consultas.muniguate.com/consultas/remisiones/remision_pic.jsp?r=%v"
 
-	rURL, err := url.Parse(getAttribute("href", info.Get(1)))
+	rURL, err := url.Parse(GetAttribute("href", info.Get(1)))
 	if err != nil {
 		return
 	}
@@ -57,10 +57,10 @@ func (e *Emetra) processEmetraTicket(wg *sync.WaitGroup, tickets []Ticket, idx i
 
 	photoDoc, err := goquery.NewDocumentFromResponse(res)
 	m := photoDoc.Find(`strong:contains("MOTIVO DE REMISION:")`).Parent().Text()
-	tickets[idx].Info = cleanStrings(strings.Replace(m, "MOTIVO DE REMISION:", "", -1))
+	tickets[idx].Info = CleanStrings(strings.Replace(m, "MOTIVO DE REMISION:", "", -1))
 	regex := `[src#=(^http:\/\/consultas.muniguate.com\/consultas\/fotos)]`
 	// URL comes with an extra \n.
-	tickets[idx].Photo = cleanStrings(getAttribute("src", photoDoc.Find(regex).Get(0)))
+	tickets[idx].Photo = CleanStrings(GetAttribute("src", photoDoc.Find(regex).Get(0)))
 
 }
 

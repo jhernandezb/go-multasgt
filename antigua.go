@@ -48,17 +48,17 @@ func (a *Antigua) Check(plateType, plateNumber string) ([]Ticket, error) {
 		sel.Children().Each(func(cIdx int, cSel *goquery.Selection) {
 			switch cIdx {
 			case 0:
-				ticket.ID = cleanStrings(cSel.First().Text())
+				ticket.ID = CleanStrings(cSel.First().Text())
 			case 1:
-				ticket.Date = cleanStrings(cSel.First().Text())
+				ticket.Date = CleanStrings(cSel.First().Text())
 			case 2:
-				ticket.Location = cleanStrings(cSel.Text())
+				ticket.Location = CleanStrings(cSel.Text())
 			case 3:
-				ticket.Info = cleanStrings(cSel.Text())
+				ticket.Info = CleanStrings(cSel.Text())
 			case 5:
-				ticket.Ammount = cleanStrings(cSel.Text())
+				ticket.Ammount = CleanStrings(cSel.Text())
 			case 7:
-				ticket.Total = cleanStrings(cSel.Text())
+				ticket.Total = CleanStrings(cSel.Text())
 				tickets = append(tickets, ticket)
 			}
 		})
