@@ -3,8 +3,10 @@ package emixtra_test
 import (
 	"errors"
 	"net/http"
+	"os"
 	"testing"
 
+	"github.com/PuerkitoBio/goquery"
 	"github.com/h2non/gock"
 	"github.com/jhernandezb/go-multasgt/entities/emixtra"
 )
@@ -28,9 +30,8 @@ func TestFetchAndCheck(t *testing.T) {
 	if err != nil {
 		t.Fatal("Should not return an error")
 	}
-	rows := doc.Find(`img[src*="http://consultas\.munimixco\.gob\.gt/img/view/"]`)
-	if len(rows.Nodes) != 21 {
-		t.Fatal("Expected 21 tickets")
+	if doc == nil {
+		t.Fatal("Document should not be nil")
 	}
 }
 
@@ -53,5 +54,25 @@ func TestFetchError(t *testing.T) {
 	_, err := emixtra.Fetch("P", "308FZS", http.DefaultClient)
 	if err == nil {
 		t.Fatal("Should return an error")
+	}
+}
+
+func TestParse(t *testing.T) {
+	testFile, err := os.Open("../../test_data/emixtra.html")
+	if err != nil {
+		t.Fatalf("Error opening test data")
+	}
+	defer testFile.Close()
+
+	doc, err := goquery.NewDocumentFromReader(testFile)
+	if err != nil {
+		t.Fatalf("Error generating document")
+	}
+	tickets, err := emixtra.Parse(doc)
+	if err != nil {
+		t.Fatalf("Error should be nil")
+	}
+	if len(tickets) != 21 {
+		t.Fatalf("Should have 21 tickets")
 	}
 }
