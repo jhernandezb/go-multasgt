@@ -58,7 +58,7 @@ func (s *SCP) Check(plateType, plateNumber string) ([]Ticket, error) {
 				ticket.Info = CleanStrings(cSel.Find(`[id*="lbInfraccion"]`).Text())
 				ticket.Location = CleanStrings(cSel.Find(`[id*="_lbLugar"]`).Text())
 			case 3:
-				ticket.Ammount = cSel.Find(`[id*="lbCostoMulta"]`).Text()
+				ticket.Amount = cSel.Find(`[id*="lbCostoMulta"]`).Text()
 				tickets = append(tickets, ticket)
 			}
 

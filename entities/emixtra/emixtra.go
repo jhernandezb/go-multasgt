@@ -50,7 +50,7 @@ func parse(doc *goquery.Document) ([]multasgt.Ticket, error) {
 		ticket.Date = multasgt.CleanStrings(sel.Find(".panel-heading > .row > .col-md-6.col-xs-5").Text())
 		ticket.Location = multasgt.CleanStrings(sel.Find(".panel-body > .row:nth-of-type(1) > .col-md-3.col-xs-9").Text())
 		ticket.Info = multasgt.CleanStrings(sel.Find(".panel-body > .row:nth-of-type(3) > .col-md-5.col-xs-9").Text())
-		ticket.Ammount = multasgt.CleanStrings(sel.Find(".panel-body > .row:nth-of-type(6) > div:nth-of-type(1)").Text())
+		ticket.Amount = multasgt.CleanStrings(sel.Find(".panel-body > .row:nth-of-type(6) > div:nth-of-type(1)").Text())
 		ticket.Discount = multasgt.CleanStrings(sel.Find(".panel-body > .row:nth-of-type(6) > div:nth-of-type(2)").Text())
 		ticket.Total = multasgt.CleanStrings(sel.Find(".panel-body > .row:nth-of-type(6) > div:nth-of-type(3)").Text())
 		_photo := sel.Find(".panel-body > .row:nth-of-type(4) > .col-md-5 >  img")

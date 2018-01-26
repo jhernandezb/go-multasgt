@@ -61,7 +61,7 @@ func (f *Fraijanes) Check(plateType, plateNumber string) ([]Ticket, error) {
 				ticket.Info = fmt.Sprintf("%v, %v", ticket.Info, CleanStrings(sel.Text()))
 			case 4:
 				val := CleanStrings(sel.Text())
-				ticket.Ammount = val
+				ticket.Amount = val
 				ticket.Total = val
 			}
 		})

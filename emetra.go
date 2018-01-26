@@ -45,7 +45,7 @@ func (e *Emetra) processEmetraTicket(wg *sync.WaitGroup, tickets []Ticket, idx i
 		Entity:   "EMETRA",
 		ID:       id,
 		Date:     date,
-		Ammount:  ammount,
+		Amount:   ammount,
 		Photo:    photo,
 		Location: loc,
 	}

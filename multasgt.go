@@ -14,7 +14,7 @@ type Ticket struct {
 	ID       string `json:"id"`
 	Entity   string `json:"entity"`
 	Date     string `json:"date"`
-	Ammount  string `json:"ammount"`
+	Amount   string `json:"amount"`
 	Discount string `json:"discount"`
 	Total    string `json:"total"`
 	Location string `json:"location"`

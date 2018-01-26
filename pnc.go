@@ -69,7 +69,7 @@ func (p *PNC) Check(plateType, plateNumber string) ([]Ticket, error) {
 				ticket.Location = CleanStrings(s.Text())
 			case 6:
 				val := CleanStrings(s.Text())
-				ticket.Ammount = val
+				ticket.Amount = val
 				ticket.Total = val
 			}
 		})

@@ -56,7 +56,7 @@ func (a *Antigua) Check(plateType, plateNumber string) ([]Ticket, error) {
 			case 3:
 				ticket.Info = CleanStrings(cSel.Text())
 			case 5:
-				ticket.Ammount = CleanStrings(cSel.Text())
+				ticket.Amount = CleanStrings(cSel.Text())
 			case 7:
 				ticket.Total = CleanStrings(cSel.Text())
 				tickets = append(tickets, ticket)

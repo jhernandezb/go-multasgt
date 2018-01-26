@@ -71,7 +71,7 @@ func (f *VillaNueva) Check(plateType, plateNumber string) ([]Ticket, error) {
 			case 5:
 				ticket.Info = CleanStrings(sel.Text())
 			case 6:
-				ticket.Ammount = CleanStrings(sel.Text())
+				ticket.Amount = CleanStrings(sel.Text())
 			case 7:
 				ticket.Discount = CleanStrings(sel.Text())
 			case 8:
