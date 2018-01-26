@@ -27,6 +27,7 @@ type TicketChecker interface {
 	Check(plateType, plateNumber string) ([]Ticket, error)
 }
 
+// GetAttribute gets an attribute from an HTML node.
 func GetAttribute(attrName string, n *html.Node) string {
 	if n == nil {
 		return ""
