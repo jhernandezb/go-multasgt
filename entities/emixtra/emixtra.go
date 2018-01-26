@@ -14,8 +14,7 @@ const (
 	exmitraEntity = "EMIXTRA"
 )
 
-// Fetch fetches the ticket from the remote endpoint.
-func Fetch(plateType, plateNumber string, cli *http.Client) (*goquery.Document, error) {
+func fetch(plateType, plateNumber string, cli *http.Client) (*goquery.Document, error) {
 	resp, err := cli.PostForm(emixtraURL, url.Values{
 		"tPlaca": {plateType},
 		"placa":  {plateNumber},
@@ -37,8 +36,7 @@ func Fetch(plateType, plateNumber string, cli *http.Client) (*goquery.Document, 
 	return doc, nil
 }
 
-// Parse parses the retrieved document and returns and array of tickets.
-func Parse(doc *goquery.Document) ([]multasgt.Ticket, error) {
+func parse(doc *goquery.Document) ([]multasgt.Ticket, error) {
 	rows := doc.Find(".row > .col-md-8.col-xs-10> .panel.panel-primary")
 	var tickets []multasgt.Ticket
 	var ticket multasgt.Ticket
@@ -60,4 +58,13 @@ func Parse(doc *goquery.Document) ([]multasgt.Ticket, error) {
 		tickets = append(tickets, ticket)
 	})
 	return tickets, nil
+}
+
+// Check fetch and parse a request.
+func Check(plateType, plateNumber string, cli *http.Client) ([]multasgt.Ticket, error) {
+	doc, err := fetch(plateNumber, plateType, cli)
+	if err != nil {
+		return nil, err
+	}
+	return parse(doc)
 }

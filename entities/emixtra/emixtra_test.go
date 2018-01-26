@@ -1,4 +1,4 @@
-package emixtra_test
+package emixtra
 
 import (
 	"errors"
@@ -8,7 +8,6 @@ import (
 
 	"github.com/PuerkitoBio/goquery"
 	"github.com/h2non/gock"
-	"github.com/jhernandezb/go-multasgt/entities/emixtra"
 )
 
 func emixtraMatcher(req *http.Request, ereq *gock.Request) (bool, error) {
@@ -26,7 +25,7 @@ func TestFetchAndCheck(t *testing.T) {
 		AddMatcher(emixtraMatcher).
 		Reply(200).
 		File("../../test_data/emixtra.html")
-	doc, err := emixtra.Fetch("P", "308FZS", http.DefaultClient)
+	doc, err := fetch("P", "308FZS", http.DefaultClient)
 	if err != nil {
 		t.Fatal("Should not return an error")
 	}
@@ -40,7 +39,7 @@ func TestFetchInvalidStatus(t *testing.T) {
 	gock.New("https://consultas.munimixco.gob.gt").
 		Post("/pvisa/emixtra").
 		Reply(500)
-	_, err := emixtra.Fetch("P", "308FZS", http.DefaultClient)
+	_, err := fetch("P", "308FZS", http.DefaultClient)
 	if err == nil {
 		t.Fatal("Should return an error")
 	}
@@ -51,7 +50,7 @@ func TestFetchError(t *testing.T) {
 	gock.New("https://consultas.munimixco.gob.gt").
 		Post("/pvisa/emixtra").
 		ReplyError(http.ErrServerClosed)
-	_, err := emixtra.Fetch("P", "308FZS", http.DefaultClient)
+	_, err := fetch("P", "308FZS", http.DefaultClient)
 	if err == nil {
 		t.Fatal("Should return an error")
 	}
@@ -68,7 +67,7 @@ func TestParse(t *testing.T) {
 	if err != nil {
 		t.Fatalf("Error generating document")
 	}
-	tickets, err := emixtra.Parse(doc)
+	tickets, err := parse(doc)
 	if err != nil {
 		t.Fatalf("Error should be nil")
 	}
