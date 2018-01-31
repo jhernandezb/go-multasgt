@@ -84,7 +84,7 @@ func (e *Emetra) Check(plateType, plateNumber string) ([]Ticket, error) {
 	tickets := make([]Ticket, len(rows.Nodes))
 	rows.Each(func(idx int, sel *goquery.Selection) {
 		wg.Add(1)
-		e.processEmetraTicket(&wg, tickets, idx, sel)
+		go e.processEmetraTicket(&wg, tickets, idx, sel)
 	})
 	wg.Wait()
 	return tickets, nil
