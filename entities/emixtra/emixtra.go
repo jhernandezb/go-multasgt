@@ -62,7 +62,7 @@ func parse(doc *goquery.Document) ([]multasgt.Ticket, error) {
 
 // Check fetch and parse a request.
 func Check(plateType, plateNumber string, cli *http.Client) ([]multasgt.Ticket, error) {
-	doc, err := fetch(plateNumber, plateType, cli)
+	doc, err := fetch(plateType, plateNumber, cli)
 	if err != nil {
 		return nil, err
 	}

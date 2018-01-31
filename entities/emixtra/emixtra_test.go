@@ -16,6 +16,9 @@ func emixtraMatcher(req *http.Request, ereq *gock.Request) (bool, error) {
 	if estado != "0" {
 		return false, errors.New("Should have `estado` prop")
 	}
+	if req.Form.Get("placa") != "308FZS" {
+		return false, errors.New("plate number not matching")
+	}
 	return true, nil
 }
 func TestFetchAndCheck(t *testing.T) {
@@ -25,9 +28,9 @@ func TestFetchAndCheck(t *testing.T) {
 		AddMatcher(emixtraMatcher).
 		Reply(200).
 		File("../../test_data/emixtra.html")
-	doc, err := fetch("P", "308FZS", http.DefaultClient)
+	doc, err := Check("P", "308FZS", http.DefaultClient)
 	if err != nil {
-		t.Fatal("Should not return an error")
+		t.Fatal("should not return an error", err)
 	}
 	if doc == nil {
 		t.Fatal("Document should not be nil")
