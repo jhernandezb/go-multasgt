@@ -4,6 +4,7 @@ workspace:
 
 pipeline:
   test:
-    image: golang:1.9
+    image: golang:1.10
     commands:
+      - go get -u github.com/golang/dep/cmd/dep && dep ensure -vendor-only -v
       - go test -cover github.com/jhernandezb/go-multasgt/entities/emixtra
