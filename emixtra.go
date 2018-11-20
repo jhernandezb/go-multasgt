@@ -39,6 +39,7 @@ func (e *Emixtra) Check(plateType, plateNumber string) ([]Ticket, error) {
 	rows := doc.Find(".row > .col-md-8.col-xs-10> .panel.panel-primary")
 	var ticket Ticket
 	rows.Each(func(idx int, sel *goquery.Selection) {
+
 		// Ommit header info
 		if idx == 0 {
 			return

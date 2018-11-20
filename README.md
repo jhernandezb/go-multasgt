@@ -1,7 +1,11 @@
 # MultasGT
 
+```
+make plate=123ABC
+```
 
 ## Soporte
+
 - Guatemala
 - Mixco
 - Santa Catarina Pinula
@@ -10,7 +14,8 @@
 - PNC
 - Antigua Guatemala
 
-## LICENSE 
+## LICENSE
+
 - [goquery][goquery]
 - [cascadia][cascadia]
 
