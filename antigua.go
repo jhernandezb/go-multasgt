@@ -16,6 +16,7 @@ const (
 	antiguaEntity = "ANTIGUA"
 )
 
+// Antigua implementation.
 type Antigua struct {
 	Client *http.Client
 }
